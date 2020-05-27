@@ -1,4 +1,5 @@
 import discord
+import os
 
 client = discord.Client()
 
@@ -38,4 +39,5 @@ async def on_message(scp):
             embed=discord.Embed(title= f"뒤에 검색할 내용을 적어주세요.", description=f"예를 들어, !scp 300 ko 이렇게 말이죠.", color=0xf3bb76)
             await scp.channel.send(embed=embed)
 
-client.run('NzEzNjkwODQ4Nzg0NTQ3OTMw.Xs7xSA.uD3R6Y1RZu4A3ioMw9O7uSVAA2c')
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
