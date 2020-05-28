@@ -11,10 +11,6 @@ async def on_ready():
 async def on_message(scp):
     if scp.author == client.user:
         return
-    
-    info = scp.content.split(" ")[1]
-    region = scp.content.split(" ")[2]
-    lfo = len(info)
 
 
     if scp.content.startswith('!ping'):
@@ -33,7 +29,7 @@ async def on_message(scp):
         await scp.channel.send(embed=embed)   
         
     if scp.content.startswith('!search'):
-
+        info = scp.content.split(" ")[1]
         embed=discord.Embed(title= f"http://ko.scp-wiki.net/search:site/a/pf/q/" + info, description=f"", color=0x23bb76)
         await scp.channel.send(embed=embed)       
         
@@ -49,6 +45,10 @@ async def on_message(scp):
     if scp.content.startswith('!scp'):
         
         try:
+            info = scp.content.split(" ")[1]
+            region = scp.content.split(" ")[2]
+            lfo = len(info)
+            
             if lfo == 1:
                 embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-00" + info + "-" + region, description=f"", color=0x23bb76)
                 await scp.channel.send(embed=embed)
