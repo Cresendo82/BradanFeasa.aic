@@ -16,7 +16,18 @@ async def on_message(scp):
     if scp.content.startswith('!핑'):
 
         await scp.channel.send('퐁')
-
+        
+    if scp.content.startswith('!브라단'):
+        i = randint(1,3)
+        if i == 1:
+            await scp.channel.send('지혜의 연어, 브라단입니다.')
+            
+        if i == 1:
+            await scp.channel.send('우리들의 동무, 브라단입니다.')
+            
+        if i == 1:
+            await scp.channel.send('뭐든지 물어봐주세요, 브라단입니다.')            
+                        
     if scp.content.startswith('!구글'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","+")        
@@ -35,12 +46,12 @@ async def on_message(scp):
         embed=discord.Embed(title= f"https://ko.wikipedia.org/wiki/" + repl, description=f"", color=0x23bb76)
         await scp.channel.send(embed=embed)  
         
-    if scp.content.startswith('!도움말'):
+    if scp.content.startswith('!명령어'):
         
-        embed=discord.Embed(title=f"도와드릴까요?", description="도움말 목록", color=0x00ff56)
+        embed=discord.Embed(title=f"도와드릴까요?", description="명령어 목록", color=0x00ff56)
         embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그", inline=True)
         embed.add_field(name="엔터테이닝", value="!핑, !랜덤", inline=True)
-        embed.add_field(name="부가기능", value="!도움말, !환영", inline=True)
+        embed.add_field(name="부가기능", value="!명령어, !환영, !브라단", inline=True)
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!환영'): 
