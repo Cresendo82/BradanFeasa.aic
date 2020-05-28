@@ -16,6 +16,11 @@ async def on_message(scp):
 
         await scp.channel.send('pong')
         
+    if scp.content.startswith('!help'):
+
+        embed=discord.Embed(title= f"!ping으로 핑 확인, !help로 도움말 보기, !scp로 엣씨피 검색..", description=f"!secret", color=0x23bb76)
+        await scp.channel.send(embed=embed)
+        
     if scp.content.startswith('!secret'):
 
         await scp.channel.send('well, revealed in 2021. about author of this bot')
