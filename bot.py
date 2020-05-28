@@ -1,5 +1,6 @@
 import discord
 import os
+import random
 
 client = discord.Client()
 
@@ -32,6 +33,7 @@ async def on_message(scp):
         
         embed=discord.Embed(title=f"도와드릴까요?", description="도움말 목록", color=0x00ff56)
         embed.add_field(name="검색기능", value="!구글, !위백, !scp", inline=True)
+        embed.add_field(name="엔터테이닝", value="!랜덤", inline=True)
         embed.add_field(name="부가기능", value="!핑, !도움말, !환영", inline=True)
         await scp.channel.send(embed=embed)
         
@@ -49,6 +51,9 @@ async def on_message(scp):
     if scp.content.startswith('!secret'):
 
         await scp.channel.send('well, revealed in 2021. about author of this bot')
+        
+    if scp.content.startswith('!랜덤'):
+        await scp.channel.send('http://ko.scp-wiki.net/random:random-scp')
 
     if scp.content.startswith('!scp'):
         
