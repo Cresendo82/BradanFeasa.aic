@@ -16,14 +16,14 @@ async def on_message(scp):
 
         await scp.channel.send('퐁')
 
-    if scp.content.startswith('!검색'):
+    if scp.content.startswith('!구글'):
         info = scp.content.split(" ")[1]
         embed=discord.Embed(title= f"https://www.google.com/search?q=" + info, description=f"", color=0x23bb76)
         await scp.channel.send(embed=embed)       
         
     if scp.content.startswith('!도움'):
 
-        embed=discord.Embed(title= f"!핑으로 핑 확인, !도움으로 도움말 보기, !scp로 엣씨피 검색, !환영으로 환영하기, !검색으로 구글 검색.", description=f"", color=0x23bb76)
+        embed=discord.Embed(title= f"!핑으로 핑 확인, !도움으로 도움말 보기, !scp로 엣씨피 검색, !환영으로 환영하기, !구글으로 구글 검색.", description=f"", color=0x23bb76)
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!환영'): 
