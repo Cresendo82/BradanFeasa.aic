@@ -23,6 +23,12 @@ async def on_message(scp):
         embed=discord.Embed(title= f"https://www.google.com/search?q=" + repl, description=f"", color=0x23bb76)
         await scp.channel.send(embed=embed)    
         
+    if scp.content.startswith('!태그'):
+        info = scp.content[4:len(scp.content)]
+        repl= info.replace(" ","+")        
+        embed=discord.Embed(title= f"http://ko.scp-wiki.net/system:page-tags/tag/" + repl, description=f"", color=0x23bb76)
+        await scp.channel.send(embed=embed)  
+        
     if scp.content.startswith('!위백'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","+")        
@@ -32,7 +38,7 @@ async def on_message(scp):
     if scp.content.startswith('!도움말'):
         
         embed=discord.Embed(title=f"도와드릴까요?", description="도움말 목록", color=0x00ff56)
-        embed.add_field(name="검색기능", value="!구글, !위백, !scp", inline=True)
+        embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그", inline=True)
         embed.add_field(name="엔터테이닝", value="!랜덤", inline=True)
         embed.add_field(name="부가기능", value="!핑, !도움말, !환영", inline=True)
         await scp.channel.send(embed=embed)
