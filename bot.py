@@ -12,12 +12,11 @@ async def on_message(scp):
     if scp.author == client.user:
         return
 
+    if scp.content.startswith('!핑'):
 
-    if scp.content.startswith('!ping'):
+        await scp.channel.send('퐁')
 
-        await scp.channel.send('pong')
-
-    if scp.content.startswith('!welcome'):
+    if scp.content.startswith('!환영'):
 
         embed=discord.Embed(title="환영합니다!", description="한국 지부 scp 챗방에 오신걸 환영합니다.", color=0x00ff56)
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/556145244832530433/715391771051556905/logo_white.png")
@@ -28,14 +27,14 @@ async def on_message(scp):
         embed.set_footer(text="수동이라서 느릴 수 있는 점, 양해 부탁드립니다. 다시 한번 재단 디코방에 오신 것을 환영합니다.")
         await scp.channel.send(embed=embed)   
         
-    if scp.content.startswith('!search'):
+    if scp.content.startswith('!검색'):
         info = scp.content.split(" ")[1]
         embed=discord.Embed(title= f"http://ko.scp-wiki.net/search:site/a/pf/q/" + info, description=f"", color=0x23bb76)
         await scp.channel.send(embed=embed)       
         
-    if scp.content.startswith('!help'):
+    if scp.content.startswith('!도움'):
 
-        embed=discord.Embed(title= f"!ping으로 핑 확인, !help으로 도움말 보기, !scp로 엣씨피 검색, !welcome으로 환영하기, !search으로 페이지 및 포럼 검색.", description=f"!secret", color=0x23bb76)
+        embed=discord.Embed(title= f"!핑으로 핑 확인, !도움으로 도움말 보기, !scp로 엣씨피 검색, !환영으로 환영하기, !검색으로 페이지 및 포럼 검색.", description=f"!secret", color=0x23bb76)
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!secret'):
@@ -48,18 +47,35 @@ async def on_message(scp):
             info = scp.content.split(" ")[1]
             region = scp.content.split(" ")[2]
             lfo = len(info)
+            rfo = len(region)
             
-            if lfo == 1:
-                embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-00" + info + "-" + region, description=f"", color=0x23bb76)
-                await scp.channel.send(embed=embed)
+            if rfo >= 1:
+                
+                if lfo == 1:
+                    embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-00" + info + "-" + region, description=f"", color=0x23bb76)
+                    await scp.channel.send(embed=embed)
 
-            if lfo == 2:
-                embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-0" + info + "-" + region, description=f"", color=0x23bb76)
-                await scp.channel.send(embed=embed)
+                if lfo == 2:
+                    embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-0" + info + "-" + region, description=f"", color=0x23bb76)
+                    await scp.channel.send(embed=embed)
 
-            if lfo == 3 or lfo == 4:
-                embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-" + info + "-" + region, description=f"", color=0x23bb76)
-                await scp.channel.send(embed=embed)
+                if lfo == 3 or lfo == 4:
+                    embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-" + info + "-" + region, description=f"", color=0x23bb76)
+                    await scp.channel.send(embed=embed)
+                    
+             if rfo = 0:
+                
+                if lfo == 1:
+                    embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-00" + info, description=f"", color=0x23bb76)
+                    await scp.channel.send(embed=embed)
+
+                if lfo == 2:
+                    embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-0" + info, description=f"", color=0x23bb76)
+                    await scp.channel.send(embed=embed)
+
+                if lfo == 3 or lfo == 4:
+                    embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-" + info, description=f"", color=0x23bb76)
+                    await scp.channel.send(embed=embed)
 
         except IndexError:
             embed=discord.Embed(title= f"뒤에 검색할 내용을 적어주세요.", description=f"예를 들어, !scp 300 ko 이렇게 말이죠.", color=0xf3bb76)
