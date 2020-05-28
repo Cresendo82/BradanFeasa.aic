@@ -48,7 +48,7 @@ async def on_message(scp):
             region = scp.content.split(" ")[2]
             lfo = len(info)
             
-            if region != 'en' :
+            if region != 'en':
                 
                 if lfo == 1:
                     embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-00" + info + "-" + region, description=f"", color=0x23bb76)
@@ -62,7 +62,7 @@ async def on_message(scp):
                     embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-" + info + "-" + region, description=f"", color=0x23bb76)
                     await scp.channel.send(embed=embed)
                     
-            if region = 'en' :
+            if region = 'en':
             
                 if lfo == 1:
                     embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-00" + info, description=f"", color=0x23bb76)
