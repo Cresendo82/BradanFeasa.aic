@@ -17,12 +17,12 @@ async def on_message(scp):
         await scp.channel.send('퐁')
 
     if scp.content.startswith('!구글'):
-        info = scp.content[4:len(message.content)]
+        info = scp.content[4:len(scp.content)]
         embed=discord.Embed(title= f"https://www.google.com/search?q=" + info, description=f"", color=0x23bb76)
         await scp.channel.send(embed=embed)    
         
     if scp.content.startswith('!위백'):
-        info = scp.content[4:len(message.content)]
+        info = scp.content[4:len(scp.content)]
         embed=discord.Embed(title= f"https://ko.wikipedia.org/wiki/" + info, description=f"", color=0x23bb76)
         await scp.channel.send(embed=embed)  
         
