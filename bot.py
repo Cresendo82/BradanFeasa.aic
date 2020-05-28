@@ -21,7 +21,7 @@ async def on_message(scp):
         embed=discord.Embed(title= f"https://www.google.com/search?q=" + info, description=f"", color=0x23bb76)
         await scp.channel.send(embed=embed)    
         
-    if scp.content.startswith('!위키'):
+    if scp.content.startswith('!위백'):
         info = scp.content.split(" ")[1]
         embed=discord.Embed(title= f"https://ko.wikipedia.org/wiki/" + info, description=f"", color=0x23bb76)
         await scp.channel.send(embed=embed)  
@@ -29,7 +29,7 @@ async def on_message(scp):
     if scp.content.startswith('!도움말'):
         
         embed=discord.Embed(title=f"도와드릴까요?", description="도움말 목록", color=0x00ff56)
-        embed.add_field(name="검색기능", value="!구글, !위키, !scp", inline=True)
+        embed.add_field(name="검색기능", value="!구글, !위백, !scp", inline=True)
         embed.add_field(name="부가기능", value="!핑, !도움말, !환영", inline=True)
         await scp.channel.send(embed=embed)
         
@@ -54,34 +54,34 @@ async def on_message(scp):
             info = scp.content.split(" ")[1]
             region = scp.content.split(" ")[2]
             lfo = len(info)
-            
-            if region != 'en':
                 
-                if lfo == 1:
-                    embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-00" + info + "-" + region, description=f"", color=0x23bb76)
-                    await scp.channel.send(embed=embed)
+                if region != 'en':
+                
+                    if lfo == 1:
+                        embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-00" + info + "-" + region, description=f"", color=0x23bb76)
+                        await scp.channel.send(embed=embed)
 
-                if lfo == 2:
-                    embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-0" + info + "-" + region, description=f"", color=0x23bb76)
-                    await scp.channel.send(embed=embed)
+                    if lfo == 2:
+                        embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-0" + info + "-" + region, description=f"", color=0x23bb76)
+                        await scp.channel.send(embed=embed)
 
-                if lfo == 3 or lfo == 4:
-                    embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-" + info + "-" + region, description=f"", color=0x23bb76)
-                    await scp.channel.send(embed=embed)
+                    if lfo == 3 or lfo == 4:
+                        embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-" + info + "-" + region, description=f"", color=0x23bb76)
+                        await scp.channel.send(embed=embed)
                     
-            if region == 'en':
+                if region == 'en':
             
-                if lfo == 1:
-                    embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-00" + info, description=f"", color=0x23bb76)
-                    await scp.channel.send(embed=embed)
+                    if lfo == 1:
+                        embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-00" + info, description=f"", color=0x23bb76)
+                        await scp.channel.send(embed=embed)
 
-                if lfo == 2:
-                    embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-0" + info, description=f"", color=0x23bb76)
-                    await scp.channel.send(embed=embed)
+                    if lfo == 2:
+                        embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-0" + info, description=f"", color=0x23bb76)
+                        await scp.channel.send(embed=embed)
 
-                if lfo == 3 or lfo == 4:
-                    embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-" + info, description=f"", color=0x23bb76)
-                    await scp.channel.send(embed=embed)
+                    if lfo == 3 or lfo == 4:
+                        embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-" + info, description=f"", color=0x23bb76)
+                        await scp.channel.send(embed=embed)
 
         except IndexError:
             embed=discord.Embed(title= f"뒤에 검색할 내용을 적어주세요.", description=f"예를 들어, !scp 300 en 이렇게 말이죠.", color=0xf3bb76)
