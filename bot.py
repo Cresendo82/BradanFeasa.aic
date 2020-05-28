@@ -28,7 +28,7 @@ async def on_message(scp):
         
     if scp.content.startswith('!help'):
 
-        embed=discord.Embed(title= f"!ping으로 핑 확인, !help로 도움말 보기, !scp로 엣씨피 검색.", description=f"!secret", color=0x23bb76)
+        embed=discord.Embed(title= f"!ping으로 핑 확인, !help로 도움말 보기, !scp로 엣씨피 검색, !search로 페이지 및 포럼 검색.", description=f"!secret", color=0x23bb76)
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!secret'):
