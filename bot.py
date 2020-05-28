@@ -11,14 +11,24 @@ async def on_ready():
 async def on_message(scp):
     if scp.author == client.user:
         return
+    
+    info = scp.content.split(" ")[1]
+    region = scp.content.split(" ")[2]
+    lfo = len(info)
+
 
     if scp.content.startswith('!ping'):
 
         await scp.channel.send('pong')
+
+    if scp.content.startswith('!search'):
+
+        embed=discord.Embed(title= f"http://ko.scp-wiki.net/search:site/a/pf/q/" + info, description=f"", color=0x23bb76)
+        await scp.channel.send(embed=embed)       
         
     if scp.content.startswith('!help'):
 
-        embed=discord.Embed(title= f"!ping으로 핑 확인, !help로 도움말 보기, !scp로 엣씨피 검색..", description=f"!secret", color=0x23bb76)
+        embed=discord.Embed(title= f"!ping으로 핑 확인, !help로 도움말 보기, !scp로 엣씨피 검색.", description=f"!secret", color=0x23bb76)
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!secret'):
@@ -28,10 +38,6 @@ async def on_message(scp):
     if scp.content.startswith('!scp'):
         
         try:
-            info = scp.content.split(" ")[1]
-            region = scp.content.split(" ")[2]
-            lfo = len(info)
-
             if lfo == 1:
                 embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-00" + info + "-" + region, description=f"", color=0x23bb76)
                 await scp.channel.send(embed=embed)
