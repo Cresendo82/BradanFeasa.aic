@@ -19,11 +19,18 @@ async def on_message(scp):
     if scp.content.startswith('!구글'):
         info = scp.content.split(" ")[1]
         embed=discord.Embed(title= f"https://www.google.com/search?q=" + info, description=f"", color=0x23bb76)
-        await scp.channel.send(embed=embed)       
+        await scp.channel.send(embed=embed)    
         
-    if scp.content.startswith('!도움'):
-
-        embed=discord.Embed(title= f"!핑으로 핑 확인, !도움으로 도움말 보기, !scp로 엣씨피 검색, !환영으로 환영하기, !구글으로 구글 검색.", description=f"", color=0x23bb76)
+    if scp.content.startswith('!위키'):
+        info = scp.content.split(" ")[1]
+        embed=discord.Embed(title= f"https://ko.wikipedia.org/wiki/" + info, description=f"", color=0x23bb76)
+        await scp.channel.send(embed=embed)  
+        
+    if scp.content.startswith('!도움말'):
+        
+        embed=discord.Embed(title=f"도와드릴까요?", description="도움말 목록", color=0x00ff56)
+        embed.add_field(name="검색기능", value="!구글, !위키, !scp", inline=True)
+        embed.add_field(name="부가기능", value="!핑, !도움말, !환영", inline=True)
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!환영'): 
