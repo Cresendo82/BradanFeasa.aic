@@ -28,8 +28,12 @@ async def on_message(scp):
             await scp.channel.send('우리들의 동무, 브라단입니다.')
             
         if i == 3:
-            await scp.channel.send('뭐든지 물어봐주세요, 브라단입니다.')            
-                        
+            await scp.channel.send('뭐든지 물어봐주세요, 브라단입니다.') 
+            
+    if scp.content.startswith('!업데이트'):
+
+        await scp.channel.send('업데이트 내역: !브라단 추가, !업데이트 추가')
+        
     if scp.content.startswith('!구글'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","+")        
@@ -53,7 +57,7 @@ async def on_message(scp):
         embed=discord.Embed(title=f"도와드릴까요?", description="명령어 목록", color=0x00ff56)
         embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그", inline=True)
         embed.add_field(name="엔터테이닝", value="!핑, !랜덤", inline=True)
-        embed.add_field(name="부가기능", value="!명령어, !환영, !브라단", inline=True)
+        embed.add_field(name="부가기능", value="!명령어, !환영, !브라단, !업데이트", inline=True)
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!환영'): 
