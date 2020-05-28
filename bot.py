@@ -23,7 +23,7 @@ async def on_message(scp):
     if scp.content.startswith('!환영'):
 
         embed=discord.Embed(title="환영합니다!", description="SH-KO 대화방에 오신걸 환영합니다.", color=0x00ff56)
-        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/715122773298511922/715410397942906950/dccon.png")
+        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/715122773298511922/715410982901514271/sh.png")
         embed.add_field(name="일단,", value="member 권한이 없으신 분들께서 껐다 키면 로그가 안 보이는 불편을 겪으실 수 있습니다. #숯례문, #월대 외의 다른 방에 못 들어가는 불편 역시 겪으실 수 있습니다. (#숯례문에 들어가시면 자세히 보실 수 있습니다).", inline=True)
         embed.add_field(name="그리고,", value="위키닷에 가입하신후, 재단 위키에 가입 신청을 해서 합격하면 member 권한을 얻으실 수 있습니다. http://ko.scp-wiki.net/system:join 이 링크로 들어가시면 됩니다. 가입 신청을 넣을 때에는 신입안내를 반드시 처음부터 끝까지 꼼꼼히 읽으셔야 합니다.", inline=True)
         embed.add_field(name="주의하셔야 할점이 있는데,", value="만약 가입 절차 내용을 누설 시 경고 이후 밴 처리 될 수 있습니다.", inline=True)
