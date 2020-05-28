@@ -1,6 +1,6 @@
 import discord
 import os
-from random import *
+import random
 
 client = discord.Client()
 
@@ -24,10 +24,10 @@ async def on_message(scp):
         if i == 1:
             await scp.channel.send('지혜의 연어, 브라단입니다.')
             
-        if i == 2:
+        elif i == 2:
             await scp.channel.send('우리들의 동무, 브라단입니다.')
             
-        if i == 3:
+        elif i == 3:
             await scp.channel.send('뭐든지 물어봐주세요, 브라단입니다.') 
             
     if scp.content.startswith('!업데이트'):
