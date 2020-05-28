@@ -18,12 +18,14 @@ async def on_message(scp):
 
     if scp.content.startswith('!구글'):
         info = scp.content[4:len(scp.content)]
-        embed=discord.Embed(title= f"https://www.google.com/search?q=" + info, description=f"", color=0x23bb76)
+        repl= info.replace(" ","+")        
+        embed=discord.Embed(title= f"https://www.google.com/search?q=" + repl, description=f"", color=0x23bb76)
         await scp.channel.send(embed=embed)    
         
     if scp.content.startswith('!위백'):
         info = scp.content[4:len(scp.content)]
-        embed=discord.Embed(title= f"https://ko.wikipedia.org/wiki/" + info, description=f"", color=0x23bb76)
+        repl= info.replace(" ","+")        
+        embed=discord.Embed(title= f"https://ko.wikipedia.org/wiki/" + repl, description=f"", color=0x23bb76)
         await scp.channel.send(embed=embed)  
         
     if scp.content.startswith('!도움말'):
