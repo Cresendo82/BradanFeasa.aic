@@ -49,7 +49,7 @@ async def on_message(scp):
             lfo = len(info)
             
             if region != 'en' :
-            
+                
                 if lfo == 1:
                     embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-00" + info + "-" + region, description=f"", color=0x23bb76)
                     await scp.channel.send(embed=embed)
