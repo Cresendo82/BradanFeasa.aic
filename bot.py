@@ -36,9 +36,6 @@ async def on_message(scp):
         embed.add_field(name="멤버 확인을 위해서,", value="관리자가 가입 신청을 수락하면 위키닷 닉네임과 디코 닉네임을 동일하게 바꾸어 주세요. 이 디스코드 서버에서만 바꾸시면 됩니다. 완료되면 스태프 분들을 호출하세요. 스태프 분이 확인 뒤 멤버 권한을 드릴겁니다.", inline=True)
         embed.set_footer(text="수동이라서 느릴 수 있는 점, 양해 부탁드립니다. 다시 한번 SCP 세계관 공식 한국어 사이트 대화방에 오신 것을 환영합니다.")
         await scp.channel.send(embed=embed)
-            
-        except IndexError:
-            embed=discord.Embed(title= f"뒤에 이름을 적어주세요.", description=f"예를 들어, !환영 Cresendo 이렇게 말이죠.", color=0xf3bb76)
         
     if scp.content.startswith('!secret'):
 
