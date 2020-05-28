@@ -39,8 +39,8 @@ async def on_message(scp):
         
         embed=discord.Embed(title=f"도와드릴까요?", description="도움말 목록", color=0x00ff56)
         embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그", inline=True)
-        embed.add_field(name="엔터테이닝", value="!랜덤", inline=True)
-        embed.add_field(name="부가기능", value="!핑, !도움말, !환영", inline=True)
+        embed.add_field(name="엔터테이닝", value="!핑, !랜덤" inline=True)
+        embed.add_field(name="부가기능", value="!도움말, !환영" inline=True)
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!환영'): 
