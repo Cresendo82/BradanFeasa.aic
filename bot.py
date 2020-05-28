@@ -1,6 +1,6 @@
 import discord
 import os
-import random
+from random import *
 
 client = discord.Client()
 
@@ -18,7 +18,9 @@ async def on_message(scp):
         await scp.channel.send('퐁')
         
     if scp.content.startswith('!브라단'):
+        
         i = randint(1,3)
+        
         if i == 1:
             await scp.channel.send('지혜의 연어, 브라단입니다.')
             
