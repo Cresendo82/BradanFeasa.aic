@@ -15,6 +15,10 @@ async def on_message(scp):
     if scp.content.startswith('!ping'):
 
         await scp.channel.send('pong')
+        
+    if scp.content.startswith('!secret'):
+
+        await scp.channel.send('well, revealed in 2021. about author of this bot')
 
     if scp.content.startswith('!scp'):
         
