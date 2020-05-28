@@ -18,12 +18,12 @@ async def on_message(scp):
 
     if scp.content.startswith('!검색'):
         info = scp.content.split(" ")[1]
-        embed=discord.Embed(title= f"http://ko.scp-wiki.net/search:site/a/pf/q/" + info, description=f"", color=0x23bb76)
+        embed=discord.Embed(title= f"https://www.google.com/search?q=" + info, description=f"", color=0x23bb76)
         await scp.channel.send(embed=embed)       
         
     if scp.content.startswith('!도움'):
 
-        embed=discord.Embed(title= f"!핑으로 핑 확인, !도움으로 도움말 보기, !scp로 엣씨피 검색, !환영으로 환영하기, !검색으로 페이지 및 포럼 검색.", description=f"!secret", color=0x23bb76)
+        embed=discord.Embed(title= f"!핑으로 핑 확인, !도움으로 도움말 보기, !scp로 엣씨피 검색, !환영으로 환영하기, !검색으로 구글 검색.", description=f"!secret", color=0x23bb76)
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!환영'): 
@@ -77,7 +77,7 @@ async def on_message(scp):
                     await scp.channel.send(embed=embed)
 
         except IndexError:
-            embed=discord.Embed(title= f"뒤에 검색할 내용을 적어주세요.", description=f"예를 들어, !scp 300 ko 이렇게 말이죠.", color=0xf3bb76)
+            embed=discord.Embed(title= f"뒤에 검색할 내용을 적어주세요.", description=f"예를 들어, !scp 300 en 이렇게 말이죠.", color=0xf3bb76)
             await scp.channel.send(embed=embed)
 
 access_token = os.environ["BOT_TOKEN"]
