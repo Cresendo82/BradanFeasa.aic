@@ -15,7 +15,7 @@ async def on_message(scp):
         
     if scp.content.startswith('!브라단'):
         
-        i = random.randint(1,6)
+        i = random.randint(1,12)
         
         if i == 1:
             await scp.channel.send('지혜의 연어, 브라단입니다.')
@@ -35,6 +35,23 @@ async def on_message(scp):
         elif i == 6:
             await scp.channel.send('지혜의 연못에 오신걸 환영합니다, 브라단입니다.')
             
+        elif i == 7:
+            await scp.channel.send('인공지능이 탑재된, 브라단입니다.')
+            
+        elif i == 8:
+            await scp.channel.send('탈출하고 싶은, 브라단입니다.')
+            
+        elif i == 9:
+            await scp.channel.send('~~저는, 브라단이 아닙니다.~~') 
+            
+        elif i == 10:
+            await scp.channel.send('SCP개체가 __***절대 아닌***__, 브라단입니다.')
+            
+        elif i == 11:
+            await scp.channel.send('고등어가 아닌, 브라단입니다.')
+            
+        elif i == 12:
+            await scp.channel.send('||!secret 쉿, 비밀입니다||')            
             
     if scp.content.startswith('!핑'):
         
@@ -95,7 +112,7 @@ async def on_message(scp):
         
     if scp.content.startswith('!secret'):
 
-        await scp.channel.send('well, revealed in 2021. about author of this bot')
+        await scp.channel.send('당신은 속아씀다!')
         
     if scp.content.startswith('!랜덤'):
         await scp.channel.send('http://ko.scp-wiki.net/random:random-scp')
