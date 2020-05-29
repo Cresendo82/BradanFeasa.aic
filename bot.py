@@ -48,8 +48,12 @@ async def on_message(scp):
             
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: 탁구왕 김탁구 부활, !샌박 추가')
+        await scp.channel.send('업데이트 내역: !감사 ')
         
+    if scp.content.startswith("!감사 "):
+        member_id = scp.content.repalce("! ","").repalce("<@","").repalce(">","")
+        await message.channel.send(f"<@{str(member_id)}>")        
+      
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","-")        
