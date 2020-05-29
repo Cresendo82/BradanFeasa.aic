@@ -119,6 +119,10 @@ async def on_message(scp):
 
         await scp.channel.send('당신은 속아씀다!')
         
+    if scp.content.startswith('!ζ'):
+
+        await scp.channel.send('어케 입력함?')        
+        
     if scp.content.startswith('!랜덤'):
         await scp.channel.send('http://ko.scp-wiki.net/random:random-scp')
 
