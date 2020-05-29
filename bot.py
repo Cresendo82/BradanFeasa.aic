@@ -19,7 +19,7 @@ async def on_message(scp):
         
     if scp.content.startswith('!브라단'):
         
-        i = random.randint(1,3)
+        i = random.randint(1,6)
         
         if i == 1:
             await scp.channel.send('지혜의 연어, 브라단입니다.')
@@ -29,6 +29,15 @@ async def on_message(scp):
             
         elif i == 3:
             await scp.channel.send('뭐든지 물어봐주세요, 브라단입니다.') 
+            
+        elif i == 4:
+            await scp.channel.send('지혜가 필요하시면 불러주세요, 브라단입니다.')
+            
+        elif i == 5:
+            await scp.channel.send('이제 할말이 떨어진, 브라단입니다.')
+            
+        elif i == 6:
+            await scp.channel.send('지혜의 연못에 오신걸 환영합니다, 브라단입니다.')
             
     if scp.content.startswith('!업데이트'):
 
