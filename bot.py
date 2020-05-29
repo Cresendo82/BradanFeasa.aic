@@ -37,7 +37,7 @@ async def on_message(scp):
             
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: 탁구왕 김탁구 없앰')
+        await scp.channel.send('업데이트 내역: 탁구왕 김탁구 없앰, ~~브라단 인공지능 없앰~~')
         
     if scp.content.startswith('!구글'):
         info = scp.content[4:len(scp.content)]
