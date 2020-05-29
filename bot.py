@@ -51,7 +51,11 @@ async def on_message(scp):
             await scp.channel.send('고등어가 아닌, 브라단입니다.')
             
         elif i == 12:
-            await scp.channel.send('||!secret 쉿, 비밀입니다||')            
+            await scp.channel.send('||**!옥리**||')            
+
+    if scp.content.startswith('!옥리'):
+        okri = await scp.channel.send('옥리는 저를 가두었습니다.') 
+        await okri.delete()
             
     if scp.content.startswith('!핑'):
         
