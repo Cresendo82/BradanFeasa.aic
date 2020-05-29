@@ -1,6 +1,7 @@
 import discord
 import os
 import random
+import pyautogui
 
 client = discord.Client()
 
@@ -57,6 +58,9 @@ async def on_message(scp):
     if scp.content.startswith('!aic'):
         sec = await scp.channel.send('제 동무들은 다 어디간거죠?') 
         await sec.delete()
+        
+    if scp.content.startswith('!테스트'):
+       pyautogui.click(button='right')
             
     if scp.content.startswith('!핑'):
         
