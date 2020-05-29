@@ -51,7 +51,7 @@ async def on_message(scp):
             await scp.channel.send('고등어가 아닌, 브라단입니다.')
             
         elif i == 12:
-            sec = await scp.channel.send('||**!aic**||') 
+            sec = await scp.channel.send('**!aic**') 
             await sec.delete()            
 
     if scp.content.startswith('!aic'):
