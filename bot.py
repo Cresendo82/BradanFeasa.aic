@@ -92,7 +92,7 @@ async def on_message(scp):
         
     if scp.content.startswith('!위백'):
         info = scp.content[4:len(scp.content)]
-        repl= info.replace(" ","+")        
+        repl= info.replace(" ","_")        
         embed=discord.Embed(title= f"https://ko.wikipedia.org/wiki/" + repl, description=f"", color=0x23bb76)
         await scp.channel.send(embed=embed)  
         
