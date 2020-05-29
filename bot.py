@@ -35,9 +35,20 @@ async def on_message(scp):
         elif i == 6:
             await scp.channel.send('지혜의 연못에 오신걸 환영합니다, 브라단입니다.')
             
+            
+    if scp.content.startswith('!핑'):
+        
+        i = random.randint(1,2)
+        
+        if i == 1:
+            await scp.channel.send('퐁')
+            
+        elif i == 2:
+            await scp.channel.send('놓침')            
+            
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: 탁구왕 김탁구 없앰, !샌박 추가, ~~브라단 인공지능 없앰~~')
+        await scp.channel.send('업데이트 내역: 탁구왕 김탁구 부활, !샌박 추가')
         
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
