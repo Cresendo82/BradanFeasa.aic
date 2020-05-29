@@ -39,6 +39,12 @@ async def on_message(scp):
 
         await scp.channel.send('업데이트 내역: 탁구왕 김탁구 없앰, ~~브라단 인공지능 없앰~~')
         
+    if scp.content.startswith('!샌박'):
+        info = scp.content[4:len(scp.content)]
+        repl= info.replace(" ","-")        
+        embed=discord.Embed(title= f"http://sandbox.scp-wiki.kr/" + repl, description=f"", color=0x23bb76)
+        await scp.channel.send(embed=embed)          
+        
     if scp.content.startswith('!구글'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","+")        
