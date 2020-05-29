@@ -65,7 +65,7 @@ async def on_message(scp):
             
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: 없음')    
+        await scp.channel.send('업데이트 내역: 브라단 멘트 추가, 비밀스러운 연어입니다!')    
       
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
