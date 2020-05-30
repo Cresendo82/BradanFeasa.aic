@@ -74,7 +74,7 @@ async def on_message(scp):
         info = scp.content[5:len(scp.content)]
         
         if info == '경연' : 
-            sec = await scp.channel.send('핑퐁은 살아있슴다') 
+            sec = await scp.channel.send('핑퐁은 살아있슴다', tts=True) 
             time.sleep(1)
             await sec.delete()
             
