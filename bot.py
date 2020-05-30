@@ -51,10 +51,8 @@ async def on_message(scp):
         elif i == 11:
             await scp.channel.send('인공지능을 탑재한, 브라단입니다.')
             
-        elif i < 17 and i > 10:
-            sec = await scp.channel.send('***!자물쇠 경연***')
-            time.sleep(1)
-            await sec.delete()             
+        elif i == 12:
+            await scp.channel.send('!자물쇠 경연')             
             
     if scp.content.startswith('!탁구'):
         
@@ -77,7 +75,7 @@ async def on_message(scp):
         info = scp.content[5:len(scp.content)]
         
         if info == '경연' : 
-            await scp.channel.send('!팡 unlocked') 
+            await scp.channel.send('!탁구 unlocked') 
             
         else:
             await scp.channel.send('열쇠가 필요하거나 맞지 않습니다.')
