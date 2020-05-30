@@ -12,6 +12,8 @@ async def on_ready():
 async def on_message(scp):
     if scp.author == client.user:
         return
+     
+    key = False    
         
     if scp.content.startswith('!브라단'):
         
