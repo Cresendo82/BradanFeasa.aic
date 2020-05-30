@@ -74,9 +74,7 @@ async def on_message(scp):
         info = scp.content[5:len(scp.content)]
         
         if info == '경연' : 
-            sec = await scp.channel.send('핑퐁은 살아있슴다', tts=True) 
-            time.sleep(1)
-            await sec.delete()
+            await scp.channel.send('!핑 unlocked') 
             
         else:
             await scp.channel.send('열쇠가 필요하거나 맞지 않습니다.')
