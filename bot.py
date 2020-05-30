@@ -124,8 +124,8 @@ async def on_message(scp):
 
     if scp.content.startswith('!scp'):
         info = scp.content[4:len(scp.content)]
-        repl= info.replace(" ","+")        
-        embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp-" + repl, description=f"", color=0x23bb76)
+        repl= info.replace(" ","-")        
+        embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp" + repl, description=f"", color=0x23bb76)
         await scp.channel.send(embed=embed) 
 
 access_token = os.environ["BOT_TOKEN"]
