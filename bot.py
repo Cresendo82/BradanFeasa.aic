@@ -72,11 +72,11 @@ async def on_message(scp):
             
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: 열쇠 경연 마지막 날 기념 !자물쇠')
+        await scp.channel.send('업데이트 내역: 열쇠 경연 마지막 전날 기념 !자물쇠')
         
     if scp.content.startswith('!열쇠'):
-        
         key = True
+        await scp.channel.send('열쇠 습득 완료')
         
     if scp.content.startswith('!자물쇠'):
         
