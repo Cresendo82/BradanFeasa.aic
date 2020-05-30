@@ -55,7 +55,7 @@ async def on_message(scp):
             sec = await scp.channel.send('인공지능을 탑재한, 브라단입니다.')
             await delete(sec, delay=1)
             
-    if scp.content.startswith('!'):
+    if scp.content.startswith('!핑'):
         
         i = random.randint(1,3)
         
