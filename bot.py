@@ -16,7 +16,7 @@ async def on_message(scp):
 
     if scp.content.startswith('!브라단'):
         
-        i = random.randint(10,12)
+        i = random.randint(1,12)
         
         if i == 1:
             await scp.channel.send('지혜의 연어, 브라단입니다.')
@@ -49,12 +49,13 @@ async def on_message(scp):
             await scp.channel.send('고등어가 아닌, 브라단입니다.')
             
         elif i == 11:
-            await scp.channel.send('인공지능을 탑재한, 브라단입니다.')
-            
+            await scp.channel.send('인공지능을 탑재한, 브라단입니다.') 
+           
         elif i == 12:
-            await scp.channel.send('!자물쇠 경연')             
+            sec = await scp.channel.send('인공지능을 탑재한, 브라단입니다.')
+            await delete(sec, delay=1)
             
-    if scp.content.startswith('!탁구'):
+    if scp.content.startswith('!'):
         
         i = random.randint(1,3)
         
@@ -69,16 +70,8 @@ async def on_message(scp):
             
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: 열쇠 경연 마지막 전날 기념 !자물쇠')
+        await scp.channel.send('업데이트 내역: 김탁구의 라이벌 드디어 1위 했다')
         
-    if scp.content.startswith('!자물쇠'):
-        info = scp.content[5:len(scp.content)]
-        
-        if info == '경연' : 
-            await scp.channel.send('!탁구 unlocked') 
-            
-        else:
-            await scp.channel.send('열쇠가 필요하거나 맞지 않습니다.')
         
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
