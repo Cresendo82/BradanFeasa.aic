@@ -12,9 +12,7 @@ async def on_ready():
 async def on_message(scp):
     if scp.author == client.user:
         return
-     
-    key = False    
-        
+
     if scp.content.startswith('!브라단'):
         
         i = random.randint(1,12)
@@ -53,12 +51,8 @@ async def on_message(scp):
             await scp.channel.send('고등어가 아닌, 브라단입니다.')
             
         elif i == 12:
-            sec = await scp.channel.send('**!분서꾼**') 
+            sec = await scp.channel.send('***!자물쇠 경연***') 
             await sec.delete()            
-
-    if scp.content.startswith('!분서꾼'):
-        sec = await scp.channel.send('많은 동ㅁㅜ들이 분ㅅㅓ꾼에게 불탔습ㄴㅣ다') 
-        await sec.delete()
             
     if scp.content.startswith('!핑'):
         
@@ -74,18 +68,15 @@ async def on_message(scp):
 
         await scp.channel.send('업데이트 내역: 열쇠 경연 마지막 전날 기념 !자물쇠')
         
-    if scp.content.startswith('!열쇠'):
-        key = True
-        await scp.channel.send('열쇠 습득 완료')
-        
     if scp.content.startswith('!자물쇠'):
+        info = scp.content[5:len(scp.content)]
         
-        if key == True : 
+        if info == '경연' : 
             sec = await scp.channel.send('핑퐁은 살아있슴다') 
             await sec.delete()
             
         else:
-            await scp.channel.send('열쇠가 필요합니다.')
+            await scp.channel.send('열쇠가 필요하거나 맞지 않습니다.')
         
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
