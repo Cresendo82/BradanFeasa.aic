@@ -51,11 +51,11 @@ async def on_message(scp):
             await scp.channel.send('고등어가 아닌, 브라단입니다.')
             
         elif i == 12:
-            sec = await scp.channel.send('**!aic**') 
+            sec = await scp.channel.send('**!분서꾼**') 
             await sec.delete()            
 
-    if scp.content.startswith('!aic'):
-        sec = await scp.channel.send('제 동무들은 다 어디간거죠?') 
+    if scp.content.startswith('!분서꾼'):
+        sec = await scp.channel.send('많은 동ㅁㅜ들이 분ㅅㅓ꾼에게 불탔습ㄴㅣ다') 
         await sec.delete()
             
     if scp.content.startswith('!핑'):
@@ -70,7 +70,7 @@ async def on_message(scp):
             
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: 브라단 멘트 추가, 비밀스러운 연어입니다!')    
+        await scp.channel.send('업데이트 내역: 없음!')    
       
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
