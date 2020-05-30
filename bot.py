@@ -70,8 +70,21 @@ async def on_message(scp):
             
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: 없음!')    
-      
+        await scp.channel.send('업데이트 내역: 열쇠 경연 마지막 날 기념 !자물쇠')
+        
+    if scp.content.startswith('!열쇠'):
+        
+        key = True
+        
+    if scp.content.startswith('!자물쇠'):
+        
+        if key == True : 
+            sec = await scp.channel.send('핑퐁은 살아있슴다') 
+            await sec.delete()
+            
+        else:
+            await scp.channel.send('열쇠가 필요합니다.')
+        
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","-")        
@@ -100,7 +113,7 @@ async def on_message(scp):
         
         embed=discord.Embed(title=f"도와드릴까요?", description="명령어 목록", color=0x00ff56)
         embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그, !샌박", inline=True)
-        embed.add_field(name="엔터테이닝", value="!브라단, !랜덤", inline=True)
+        embed.add_field(name="엔터테이닝", value="!브라단, !랜덤, !자물쇠, !███", inline=True)
         embed.add_field(name="부가기능", value="!명령어, !환영, !업데이트", inline=True)
         await scp.channel.send(embed=embed)
         
