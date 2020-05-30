@@ -37,44 +37,21 @@ async def on_message(scp):
             await scp.channel.send('지혜의 연못에 오신걸 환영합니다, 브라단입니다.')
             
         elif i == 7:
-            await scp.channel.send('인공지능이 탑재된, 브라단입니다.')
-            
-        elif i == 8:
             await scp.channel.send('탈출하고 싶은, 브라단입니다.')
             
-        elif i == 9:
+        elif i == 8:
             await scp.channel.send('~~저는, 브라단이 아닙니다.~~') 
             
-        elif i == 10:
+        elif i == 9:
             await scp.channel.send('SCP개체가 __***절대 아닌***__, 브라단입니다.')
             
-        elif i == 11:
+        elif i == 10:
             await scp.channel.send('고등어가 아닌, 브라단입니다.')
             
-        elif i == 12:
+        elif i =< 11 and i >= 16:
             sec = await scp.channel.send('***!자물쇠 경연***')
             time.sleep(1)
-            await sec.delete()  
-            
-        elif i == 13:
-            sec = await scp.channel.send('***!자물쇠 경연***')
-            time.sleep(1)
-            await sec.delete() 
-            
-        elif i == 14:
-            sec = await scp.channel.send('***!자물쇠 경연***')
-            time.sleep(1)
-            await sec.delete() 
-            
-        elif i == 15:
-            sec = await scp.channel.send('***!자물쇠 경연***')
-            time.sleep(1)
-            await sec.delete() 
-            
-        elif i == 16:
-            sec = await scp.channel.send('***!자물쇠 경연***')
-            time.sleep(1)
-            await sec.delete()            
+            await sec.delete()             
             
     if scp.content.startswith('!탁구'):
         
