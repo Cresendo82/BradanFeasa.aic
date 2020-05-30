@@ -56,7 +56,7 @@ async def on_message(scp):
             time.sleep(1)
             await sec.delete()            
             
-    if scp.content.startswith('!핑'):
+    if scp.content.startswith('!팡'):
         
         i = random.randint(1,2)
         
@@ -74,7 +74,7 @@ async def on_message(scp):
         info = scp.content[5:len(scp.content)]
         
         if info == '경연' : 
-            await scp.channel.send('!핑 unlocked') 
+            await scp.channel.send('!팡 unlocked') 
             
         else:
             await scp.channel.send('열쇠가 필요하거나 맞지 않습니다.')
