@@ -48,7 +48,7 @@ async def on_message(scp):
         elif i == 10:
             await scp.channel.send('고등어가 아닌, 브라단입니다.')
             
-        elif i =< 11 and i >= 16:
+        elif i < 17 and i > 10:
             sec = await scp.channel.send('***!자물쇠 경연***')
             time.sleep(1)
             await sec.delete()             
