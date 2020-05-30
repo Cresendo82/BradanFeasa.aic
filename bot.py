@@ -16,7 +16,7 @@ async def on_message(scp):
 
     if scp.content.startswith('!브라단'):
         
-        i = random.randint(1,16)
+        i = random.randint(10,12)
         
         if i == 1:
             await scp.channel.send('지혜의 연어, 브라단입니다.')
@@ -47,6 +47,9 @@ async def on_message(scp):
             
         elif i == 10:
             await scp.channel.send('고등어가 아닌, 브라단입니다.')
+            
+        elif i == 11:
+            await scp.channel.send('인공지능을 탑재한, 브라단입니다.')
             
         elif i < 17 and i > 10:
             sec = await scp.channel.send('***!자물쇠 경연***')
