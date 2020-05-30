@@ -1,6 +1,7 @@
 import discord
 import os
 import random
+import time
 
 client = discord.Client()
 
@@ -51,7 +52,8 @@ async def on_message(scp):
             await scp.channel.send('고등어가 아닌, 브라단입니다.')
             
         elif i == 12:
-            sec = await scp.channel.send('***!자물쇠 경연***') 
+            sec = await scp.channel.send('***!자물쇠 경연***')
+            time.sleep(1)
             await sec.delete()            
             
     if scp.content.startswith('!핑'):
@@ -73,6 +75,7 @@ async def on_message(scp):
         
         if info == '경연' : 
             sec = await scp.channel.send('핑퐁은 살아있슴다') 
+            time.sleep(1)
             await sec.delete()
             
         else:
