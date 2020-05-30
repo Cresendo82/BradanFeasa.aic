@@ -16,7 +16,7 @@ async def on_message(scp):
 
     if scp.content.startswith('!브라단'):
         
-        i = random.randint(1,12)
+        i = random.randint(1,14)
         
         if i == 1:
             await scp.channel.send('지혜의 연어, 브라단입니다.')
@@ -54,7 +54,17 @@ async def on_message(scp):
         elif i == 12:
             sec = await scp.channel.send('***!자물쇠 경연***')
             time.sleep(1)
-            await sec.delete()            
+            await sec.delete()  
+            
+        elif i == 13:
+            sec = await scp.channel.send('***!자물쇠 경연***')
+            time.sleep(1)
+            await sec.delete() 
+            
+        elif i == 14:
+            sec = await scp.channel.send('***!자물쇠 경연***')
+            time.sleep(1)
+            await sec.delete()             
             
     if scp.content.startswith('!팡'):
         
