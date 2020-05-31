@@ -70,8 +70,7 @@ async def on_message(scp):
             
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: 김탁구의 라이벌 드디어 1위 했다')
-        
+        await scp.channel.send('업데이트 내역: 브라단의 이야기')     
         
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
