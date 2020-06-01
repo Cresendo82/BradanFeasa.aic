@@ -2,7 +2,6 @@ import discord
 import os
 import random
 import time
-import datetime
 
 client = discord.Client()
 
@@ -47,7 +46,7 @@ async def on_message(scp):
         
         embed=discord.Embed(title=f"도와드릴까요?", description="명령어 목록", color=0x00ff56)
         embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그, !샌박, !랜덤, !라틴", inline=True)
-        embed.add_field(name="부가기능", value="!명령어, !환영, !업데이트, !핑, !브라단", inline=True)
+        embed.add_field(name="부가기능", value="!명령어, !환영, !업데이트, !핑, !브라단, !경연", inline=True)
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!환영'): 
@@ -65,17 +64,44 @@ async def on_message(scp):
         await scp.channel.send('http://ko.scp-wiki.net/random:random-scp')
         
     if scp.content.startswith('!경연'):
-        now = datetime.now()
-        nm = now.month
         
-        if nm == 5:
-            embed=discord.Embed(title= f"**열쇠 경연 투고 기간입니다.**" + repl, description=f"모두 열심히 참여합시다!", color=0x23bb76)        
+        info = scp.content.split[1]
+        
+        if info == 1:
+            embed=discord.Embed(title= f"**성탄절 경연 결과가 나왔습니다.**" + repl, description=f"우승자는 Crislr님, ZachRobinson님입니다! 상품은... 호주산 살치살입니다! 대박", color=0x23bb76)        
 
-        if nm == 6:
-            embed=discord.Embed(title= f"**열쇠 경연 결과가 나왔습니다.**" + repl, description=f"우승자는 Nareum님, Profound Kaye님입니다!", color=0x23bb76)
+        if info == 2:
+            embed=discord.Embed(title= f"**경연 검색 결과 없음**" + repl, description=f"", color=0x23bb76)
             
-        if nm == 7:
+        if info == 3:
+            embed=discord.Embed(title= f"**나무 경연 투고 기간입니다.**" + repl, description=f"이미 지났네요. 아쉽다", color=0x23bb76)
+
+        if info == 4:
+            embed=discord.Embed(title= f"**나무 경연 결과가 나왔습니다.**" + repl, description=f"우승자는 thd-glasses님입니다! 상품은 BBQ 황금올리브치킨 반반입니다.", color=0x23bb76)      
+        
+        if info == 5:
+            embed=discord.Embed(title= f"**열쇠 경연 투고 기간입니다.**" + repl, description=f"이미 지나가버린 경연입니다. 아쉽당", color=0x23bb76)        
+
+        if info == 6:
+            embed=discord.Embed(title= f"**열쇠 경연 결과가 나왔습니다.**" + repl, description=f"우승자는 Nareum님, Profound Kaye님입니다! 상품은 등킨 도나쓰 20개입니다.", color=0x23bb76)
+            
+        if info == 7:
             embed=discord.Embed(title= f"**물고기 경연 투고 기간입니다.**" + repl, description=f"우리 모두 다 같이 투고해요!", color=0x23bb76)
+
+        if info == 8:
+            embed=discord.Embed(title= f"**물고기 경연 결과가 나왔습니다.**" + repl, description=f"우승자는 [편집됨]님, [편집됨]님입니다! 상품은 [데이터 말소]입니다!", color=0x23bb76)
+            
+        if info == 9:
+            embed=discord.Embed(title= f"**언어 경연 투고 기간입니다.**" + repl, description=f"우리 모두 투고하고 우승해요!", color=0x23bb76)
+
+        if info == 10:
+            embed=discord.Embed(title= f"**언어 경연 결과가 나왔습니다.**" + repl, description=f"우승자는 [편집됨]님, [편집됨]님입니다! 상품은 [데이터 말소]입니다!", color=0x23bb76)
+
+        if info == 11:
+            embed=discord.Embed(title= f"**성탄절 경연 투고 기간입니다.**" + repl, description=f"우리 모두 투고하고 상품받아요!", color=0x23bb76)
+
+        if info == 12:
+            embed=discord.Embed(title= f"** 경연 결과가 나왔습니다.**" + repl, description=f"우승자는 [편집됨]님, [편집됨]님입니다! 상품은 [데이터 말소]입니다!", color=0x23bb76)            
             
     if scp.content.startswith('!핑'):
         await scp.channel.send('퐁')   
