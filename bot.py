@@ -141,7 +141,7 @@ async def on_message(scp):
         info = scp.content[4:len(scp.content)]
         repl = info.replace(" ","+")
         link = "https://latina.bab2min.pe.kr/xe/?vid=xe&mid=latina&act=IS&where=&search_target=title_content&is_keyword=" + repl
-        embed=discord.Embed(title= f"검색 결과, description=f"", color=0x23bb76)
+        embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed.add_field(name=info, value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed)                
 
