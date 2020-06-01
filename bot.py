@@ -67,7 +67,7 @@ async def on_message(scp):
         
         try:
         
-            info = scp.content.split[1]
+            info = scp.content[4:len(scp.content)]
         
             if info == 1:
                 embed=discord.Embed(title= f"**성탄절 경연 결과가 나왔습니다.**" + repl, description=f"우승자는 Crislr님, ZachRobinson님입니다! 상품은... 호주산 살치살입니다! 대박", color=0x23bb76)        
