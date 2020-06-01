@@ -70,8 +70,21 @@ async def on_message(scp):
             
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: 브라단')     
+        await scp.channel.send('업데이트 내역: !농담, 재미있는 시간을 가져보세요!')
         
+    if scp.content.startswith('!농담'):
+        
+        i = random.randint(1,3)
+        
+        if i == 1:
+            await scp.channel.send('전화로 세운 건물은? 콜로세움입니다!')
+            
+        elif i == 2:
+            await scp.channel.send('개랑 달리기 시합은 절대 하면 안됩니다. 왜냐구요? 지면 개보다 못한놈, 동점이면 개 같은놈, 이기면 개보다 더한놈이 되거든요!')
+            
+        elif i == 3:
+            await scp.channel.send('파이를 쌓았더니 사라졌네요. 왜일까요? sin(π)는 0 이거든요!') 
+               
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","-")        
@@ -100,7 +113,7 @@ async def on_message(scp):
         
         embed=discord.Embed(title=f"도와드릴까요?", description="명령어 목록", color=0x00ff56)
         embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그, !샌박", inline=True)
-        embed.add_field(name="엔터테이닝", value="!브라단, !랜덤, !핑", inline=True)
+        embed.add_field(name="엔터테이닝", value="!브라단, !랜덤, !핑, !농담", inline=True)
         embed.add_field(name="부가기능", value="!명령어, !환영, !업데이트", inline=True)
         await scp.channel.send(embed=embed)
         
