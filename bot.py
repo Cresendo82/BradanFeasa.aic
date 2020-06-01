@@ -16,7 +16,7 @@ async def on_message(scp):
 
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: !브라단, 핑, 삭제. 진지해질때가 온 것 같습니다.')
+        await scp.channel.send('업데이트 내역: !핑, !브라단 부활, !농담 삭제함. 진지해질때가 온 것 같습니다.')
         
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
@@ -46,7 +46,7 @@ async def on_message(scp):
         
         embed=discord.Embed(title=f"도와드릴까요?", description="명령어 목록", color=0x00ff56)
         embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그, !샌박, !랜덤, !라틴", inline=True)
-        embed.add_field(name="부가기능", value="!명령어, !환영, !업데이트", inline=True)
+        embed.add_field(name="부가기능", value="!명령어, !환영, !업데이트, !핑, !브라단", inline=True)
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!환영'): 
@@ -62,6 +62,22 @@ async def on_message(scp):
         
     if scp.content.startswith('!랜덤'):
         await scp.channel.send('http://ko.scp-wiki.net/random:random-scp')
+        
+    if scp.content.startswith('!핑'):
+        await scp.channel.send('퐁')   
+        
+    if scp.content.startswith('!브라단'):
+        
+        i = random.randint(1,3)
+        
+        if i == 1:
+            await scp.channel.send('지혜의 연어, 브라단입니다.')
+            
+        if i == 2:
+            await scp.channel.send('Made by Cresendo, 이용해주셔서 감사합니다!')
+            
+        if i == 3:
+            await scp.channel.send('SH-KO 에서 일하게 된게 영광인 연어, 브라단입니다.')
 
     if scp.content.startswith('!scp'):
         info = scp.content[4:len(scp.content)]
