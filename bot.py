@@ -72,10 +72,10 @@ async def on_message(scp):
             embed=discord.Embed(title= f"**열쇠 경연 투고 기간입니다.**" + repl, description=f"모두 열심히 참여합시다!", color=0x23bb76)        
 
         if nm == 6:
-            embed=discord.Embed(title= f"**열쇠 경연 결과가 나왔습니다.**" + repl, description=f"우승자는 Nareum님, Profound Kaye님입니다!", color=0x23bb76)) 
+            embed=discord.Embed(title= f"**열쇠 경연 결과가 나왔습니다.**" + repl, description=f"우승자는 Nareum님, Profound Kaye님입니다!", color=0x23bb76)
             
         if nm == 7:
-            embed=discord.Embed(title= f"**물고기 경연 투고 기간입니다.**" + repl, description=f"우리 모두 다 같이 투고해요!", color=0x23bb76))
+            embed=discord.Embed(title= f"**물고기 경연 투고 기간입니다.**" + repl, description=f"우리 모두 다 같이 투고해요!", color=0x23bb76)
             
     if scp.content.startswith('!핑'):
         await scp.channel.send('퐁')   
