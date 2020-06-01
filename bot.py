@@ -14,77 +14,10 @@ async def on_message(scp):
     if scp.author == client.user:
         return
 
-    if scp.content.startswith('!브라단'):
-        
-        i = random.randint(1,12)
-        
-        if i == 1:
-            await scp.channel.send('지혜의 연어, 브라단입니다.')
-            
-        elif i == 2:
-            await scp.channel.send('우리들의 동무, 브라단입니다.')
-            
-        elif i == 3:
-            await scp.channel.send('뭐든지 물어봐주세요, 브라단입니다.') 
-            
-        elif i == 4:
-            await scp.channel.send('지혜가 필요하시면 불러주세요, 브라단입니다.')
-            
-        elif i == 5:
-            await scp.channel.send('이제 할말이 떨어진, 브라단입니다.')
-            
-        elif i == 6:
-            await scp.channel.send('지혜의 연못에 오신걸 환영합니다, 브라단입니다.')
-            
-        elif i == 7:
-            await scp.channel.send('탈출하고 싶은, 브라단입니다.')
-            
-        elif i == 8:
-            await scp.channel.send('~~저는, 브라단이 아닙니다.~~') 
-            
-        elif i == 9:
-            await scp.channel.send('SCP개체가 __***절대 아닌***__, 브라단입니다.')
-            
-        elif i == 10:
-            await scp.channel.send('고등어가 아닌, 브라단입니다.')
-            
-        elif i == 11:
-            await scp.channel.send('인공지능을 탑재한, 브라단입니다.') 
-           
-        elif i == 12:
-            sec = await scp.channel.send('인공지능을 탑재한, 브라단입니다.')
-            await delete(sec, delay=1)
-            
-    if scp.content.startswith('!핑'):
-        
-        i = random.randint(1,3)
-        
-        if i == 1:
-            await scp.channel.send('퐁')
-            
-        elif i == 2:
-            await scp.channel.send('핑') 
-            
-        elif i == 3:
-            await scp.channel.send('놓침')
-            
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: !라틴 라틴어 검색 기능 추가.')
+        await scp.channel.send('업데이트 내역: !브라단, 핑, 삭제. 진지해질때가 온 것 같습니다.')
         
-    if scp.content.startswith('!농담'):
-        
-        i = random.randint(1,3)
-        
-        if i == 1:
-            await scp.channel.send('전화로 세운 건물은? 콜로세움입니다!')
-            
-        elif i == 2:
-            await scp.channel.send('개랑 달리기 시합은 절대 하면 안됩니다. 왜냐구요? 지면 개보다 못한놈, 동점이면 개 같은놈, 이기면 개보다 더한놈이 되거든요!')
-            
-        elif i == 3:
-            await scp.channel.send('파이를 쌓았더니 사라졌네요. 왜일까요? sin(π)는 0 이거든요!') 
-               
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","-")        
@@ -112,8 +45,7 @@ async def on_message(scp):
     if scp.content.startswith('!명령어'):
         
         embed=discord.Embed(title=f"도와드릴까요?", description="명령어 목록", color=0x00ff56)
-        embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그, !샌박, !", inline=True)
-        embed.add_field(name="엔터테이닝", value="!브라단, !랜덤, !핑, !농담", inline=True)
+        embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그, !샌박, !랜덤, !라틴", inline=True)
         embed.add_field(name="부가기능", value="!명령어, !환영, !업데이트", inline=True)
         await scp.channel.send(embed=embed)
         
