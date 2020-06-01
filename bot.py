@@ -70,7 +70,7 @@ async def on_message(scp):
             
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: !농담, 재미있는 시간을 가져보세요!')
+        await scp.channel.send('업데이트 내역: !라틴 라틴어 검색 기능 추가.')
         
     if scp.content.startswith('!농담'):
         
@@ -112,7 +112,7 @@ async def on_message(scp):
     if scp.content.startswith('!명령어'):
         
         embed=discord.Embed(title=f"도와드릴까요?", description="명령어 목록", color=0x00ff56)
-        embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그, !샌박", inline=True)
+        embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그, !샌박, !", inline=True)
         embed.add_field(name="엔터테이닝", value="!브라단, !랜덤, !핑, !농담", inline=True)
         embed.add_field(name="부가기능", value="!명령어, !환영, !업데이트", inline=True)
         await scp.channel.send(embed=embed)
@@ -136,6 +136,14 @@ async def on_message(scp):
         repl= info.replace(" ","-")        
         embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp" + repl, description=f"", color=0x23bb76)
         await scp.channel.send(embed=embed) 
+        
+    if scp.content.startswith('!라틴'):
+        info = scp.content[4:len(scp.content)]
+        repl = info.replace(" ","+")
+        link = "https://latina.bab2min.pe.kr/xe/?vid=xe&mid=latina&act=IS&where=&search_target=title_content&is_keyword="
+        embed=discord.Embed(title= f"검색 결과, description=f"", color=0x23bb76)
+        embed.add_field(name=info, value='\n'+'[%s](<%s>)' % (info, link), inline=False)
+        await scp.channel.send(embed=embed)                
 
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)
