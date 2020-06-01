@@ -102,7 +102,9 @@ async def on_message(scp):
 
         if info == 12:
             embed=discord.Embed(title= f"** 경연 결과가 나왔습니다.**" + repl, description=f"우승자는 [편집됨]님, [편집됨]님입니다! 상품은 [데이터 말소]입니다!", color=0x23bb76)            
-            
+   
+    await scp.channel.send(embed=embed)
+
     if scp.content.startswith('!핑'):
         await scp.channel.send('퐁')   
         
