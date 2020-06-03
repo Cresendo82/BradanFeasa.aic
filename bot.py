@@ -16,7 +16,7 @@ async def on_message(scp):
 
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: !')
+        await scp.channel.send('업데이트 내역: 더럽고 추잡스러운 링크의 시대는 갔다! 이제 하이퍼 링크를 지원해요!')
         
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
@@ -70,7 +70,7 @@ async def on_message(scp):
         
     if scp.content.startswith('!랜덤'):
         embed=discord.Embed(title= f"랜덤 scp", description=f"", color=0x23bb76)
-        embed.add_field(name="", value='[{0}](<{1}>)'.format(info, 'http://ko.scp-wiki.net/random:random-scp'), inline=False)
+        embed.add_field(name="", value='[랜덤!](<{0}>)'.format(info, 'http://ko.scp-wiki.net/random:random-scp'), inline=False)
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!경연'):
