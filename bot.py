@@ -20,26 +20,34 @@ async def on_message(scp):
         
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
-        repl= info.replace(" ","-")        
-        embed=discord.Embed(title= f"http://sandbox.scp-wiki.kr/" + repl, description=f"", color=0x23bb76)
+        repl= info.replace(" ","-")
+        link = "http://sandbox.scp-wiki.kr/" + repl
+        embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
+        embed.add_field(name="'" + info + "'" + "의 샌드박스 페이지", value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed)          
         
     if scp.content.startswith('!구글'):
         info = scp.content[4:len(scp.content)]
-        repl= info.replace(" ","+")        
-        embed=discord.Embed(title= f"https://www.google.com/search?q=" + repl, description=f"", color=0x23bb76)
+        repl= info.replace(" ","+") 
+        link = "https://www.google.com/search?q=" + repl
+        embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
+        embed.add_field(name="'" + info + "'" + "의 구글 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed)    
         
     if scp.content.startswith('!태그'):
         info = scp.content[4:len(scp.content)]
-        repl= info.replace(" ","+")        
-        embed=discord.Embed(title= f"http://ko.scp-wiki.net/system:page-tags/tag/" + repl, description=f"", color=0x23bb76)
+        repl= info.replace(" ","+") 
+        link = "http://ko.scp-wiki.net/system:page-tags/tag/" + repl
+        embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
+        embed.add_field(name="'" + info + "'" + " 태그 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed)  
         
     if scp.content.startswith('!위백'):
         info = scp.content[4:len(scp.content)]
-        repl= info.replace(" ","_")        
-        embed=discord.Embed(title= f"https://ko.wikipedia.org/wiki/" + repl, description=f"", color=0x23bb76)
+        repl= info.replace(" ","_") 
+        link = "https://ko.wikipedia.org/wiki/" + repl
+        embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
+        embed.add_field(name="'" + info + "'" + "  검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed)  
         
     if scp.content.startswith('!명령어'):
@@ -61,7 +69,9 @@ async def on_message(scp):
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!랜덤'):
-        await scp.channel.send('http://ko.scp-wiki.net/random:random-scp')
+        embed=discord.Embed(title= f"랜덤 scp", description=f"", color=0x23bb76)
+        embed.add_field(name="", value='[{0}](<{1}>)'.format(info, 'http://ko.scp-wiki.net/random:random-scp'), inline=False)
+        await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!경연'):
         
@@ -136,9 +146,11 @@ async def on_message(scp):
             await scp.channel.send('SH-KO 에서 일하게 된게 영광인 연어, 브라단입니다.')
 
     if scp.content.startswith('!scp'):
-        info = scp.content[4:len(scp.content)]
-        repl= info.replace(" ","-")        
-        embed=discord.Embed(title= f"http://ko.scp-wiki.net/scp" + repl, description=f"", color=0x23bb76)
+        info = scp.content[5:len(scp.content)]
+        repl= info.replace(" ","-")  
+        link = "http://ko.scp-wiki.net/scp-" + repl
+        embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
+        embed.add_field(name="'" + info + "'" + "의 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed) 
         
     if scp.content.startswith('!라틴'):
@@ -146,7 +158,7 @@ async def on_message(scp):
         repl = info.replace(" ","+")
         link = "https://latina.bab2min.pe.kr/xe/?vid=xe&mid=latina&act=IS&where=&search_target=title_content&is_keyword=" + repl
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
-        embed.add_field(name=info, value='[{0}](<{1}>)'.format(info, link), inline=False)
+        embed.add_field(name="'" + info + "'" + "의 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed)                
 
 access_token = os.environ["BOT_TOKEN"]
