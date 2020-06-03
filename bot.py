@@ -130,7 +130,10 @@ async def on_message(scp):
             await scp.channel.send(embed=embed)
             
     if scp.content.startswith('!핑'):
-        await scp.channel.send('퐁')   
+        await scp.channel.send('퐁')  
+        
+    if scp.content.startswith('!목소리'):
+        await scp.channel.send('/tts 안녕하세요)
         
     if scp.content.startswith('!브라단'):
         
