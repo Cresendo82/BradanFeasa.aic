@@ -9,6 +9,24 @@ client = discord.Client()
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
     
+    while True:    
+        game = discord.Game("!업데이트로 업데이트 목록을 보세요")
+        await client.change_presence(status=discord.Status.online, activity=game)
+        await asyncio.sleep(3)
+        game = discord.Game("명령어를 보기 위해선 !명령어")
+        await client.change_presence(status=discord.Status.online, activity=game)
+        await asyncio.sleep(3)
+        ch = len(client.users)
+        game = discord.Game("{}명의 사용자와 함께하는 중입니다".format(ch))
+        await client.change_presence(status=discord.Status.online, activity=game)
+        await asyncio.sleep(3)
+        game = discord.Game("이 메시지는 3초마다 변경됩니다")
+        await client.change_presence(status=discord.Status.online, activity=game)
+        await asyncio.sleep(3)
+        game = discord.Game("브라단은 지혜의 연어입니다. 고등어가 아니라요")
+        await client.change_presence(status=discord.Status.online, activity=game)
+        await asyncio.sleep(3)
+    
 @client.event
 async def on_message(scp):
     if scp.author == client.user:
