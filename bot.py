@@ -12,20 +12,20 @@ async def on_ready():
     while True:    
         game = discord.Game("!업데이트로 업데이트 목록을 보세요")
         await client.change_presence(status=discord.Status.online, activity=game)
-        await asyncio.sleep(3)
+        time.sleep(3)
         game = discord.Game("명령어를 보기 위해선 !명령어")
         await client.change_presence(status=discord.Status.online, activity=game)
-        await asyncio.sleep(3)
+        time.sleep(3)
         ch = len(client.users)
         game = discord.Game("{}명의 사용자와 함께하는 중입니다".format(ch))
         await client.change_presence(status=discord.Status.online, activity=game)
-        await asyncio.sleep(3)
+        time.sleep(3)
         game = discord.Game("이 메시지는 3초마다 변경됩니다")
         await client.change_presence(status=discord.Status.online, activity=game)
-        await asyncio.sleep(3)
+        time.sleep(3)
         game = discord.Game("브라단은 지혜의 연어입니다. 고등어가 아니라요")
         await client.change_presence(status=discord.Status.online, activity=game)
-        await asyncio.sleep(3)
+        time.sleep(3)
     
 @client.event
 async def on_message(scp):
@@ -34,7 +34,7 @@ async def on_message(scp):
 
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: 더럽고 추잡스러운 링크의 시대는 갔다! 이제 하이퍼 링크를 지원해요!')
+        await scp.channel.send('업데이트 내역: 상태메세지를 확인하세요')
         
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
