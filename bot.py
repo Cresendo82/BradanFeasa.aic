@@ -16,14 +16,14 @@ async def on_message(scp):
 
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: 브라단이 말을 안듣네요')
+        await scp.channel.send('업데이트 내역: 유저검색 업데이트')
         
     if scp.content.startswith('!저주'):
 
         s = await scp.channel.send('저주를 내립니다')
         s = await scp.channel.send('https://media.discordapp.net/attachments/556145244832530433/718063271650787338/unknown.png')
         time.sleep(1)
-        await scp.content.delete(s, delay=None)
+        await scp.content.delete(s)
         
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
@@ -40,6 +40,14 @@ async def on_message(scp):
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed.add_field(name="'" + info + "'" + "의 구글 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed)    
+        
+    if scp.content.startswith('!유저'):
+        info = scp.content[4:len(scp.content)]
+        repl= info.replace(" ","_") 
+        link = "http://www.wikidot.com/user:info/" + repl
+        embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
+        embed.add_field(name="'" + info + "'" + " 유저 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
+        await scp.channel.send(embed=embed)          
         
     if scp.content.startswith('!태그'):
         info = scp.content[4:len(scp.content)]
@@ -60,7 +68,7 @@ async def on_message(scp):
     if scp.content.startswith('!명령어'):
         
         embed=discord.Embed(title=f"도와드릴까요?", description="명령어 목록", color=0x00ff56)
-        embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그, !샌박, !랜덤, !라틴", inline=True)
+        embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그, !샌박, !랜덤, !라틴, !", inline=True)
         embed.add_field(name="부가기능", value="!명령어, !환영, !업데이트, !핑, !브라단, !경연", inline=True)
         await scp.channel.send(embed=embed)
         
