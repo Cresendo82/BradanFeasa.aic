@@ -18,6 +18,14 @@ async def on_message(scp):
 
         await scp.channel.send('업데이트 내역: 브라단이 말을 안듣네요')
         
+    if scp.content.startswith('!저주'):
+
+        fix = await scp.channel.send('저주를 내립니다')
+        srec = await scp.channel.send('https://media.discordapp.net/attachments/556145244832530433/718063271650787338/unknown.png')
+        time.sleep(1)
+        await edit(fix, content('뀨?'))
+        await delete(srec, delay=None)
+        
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","-")
