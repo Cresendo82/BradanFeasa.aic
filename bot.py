@@ -20,10 +20,10 @@ async def on_message(scp):
         
     if scp.content.startswith('!저주'):
 
-        srec = await scp.channel.send('저주를 내립니다')
-        srec = await scp.channel.send('https://media.discordapp.net/attachments/556145244832530433/718063271650787338/unknown.png')
+        s = await scp.channel.send('저주를 내립니다')
+        s = await scp.channel.send('https://media.discordapp.net/attachments/556145244832530433/718063271650787338/unknown.png')
         time.sleep(1)
-        await delete(srec, delay=None)
+        await scp.content.delete(s, delay=None)
         
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
