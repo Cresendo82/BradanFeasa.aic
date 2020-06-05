@@ -16,7 +16,13 @@ async def on_message(scp):
 
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: 유저검색 업데이트')
+        await scp.channel.send('업데이트 내역: dm 보내기')
+        
+    if scp.content.startswith('!dm'):
+
+        author = scp.guild.get_member(int(scp.content[4:22]))
+        msg = scp.content[23:]
+        await author.send(msg)
         
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
