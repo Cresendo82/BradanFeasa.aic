@@ -18,13 +18,6 @@ async def on_message(scp):
 
         await scp.channel.send('업데이트 내역: 유저검색 업데이트')
         
-    if scp.content.startswith('!저주'):
-
-        s = await scp.channel.send('저주를 내립니다')
-        s = await scp.channel.send('https://media.discordapp.net/attachments/556145244832530433/718063271650787338/unknown.png')
-        time.sleep(1)
-        await scp.content.delete(s)
-        
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","-")
@@ -82,6 +75,7 @@ async def on_message(scp):
         embed.add_field(name="멤버 확인을 위해서,", value="관리자가 가입 신청을 수락하면 위키닷 닉네임과 디코 닉네임을 동일하게 바꾸어 주세요. 이 디스코드 서버에서만 바꾸시면 됩니다. 완료되면 스태프 분들을 호출하세요. 스태프 분이 확인 뒤 멤버 권한을 드릴겁니다.", inline=True)
         embed.set_footer(text="수동이라서 느릴 수 있는 점, 양해 부탁드립니다. 다시 한번 SCP 세계관 공식 한국어 사이트 대화방에 오신 것을 환영합니다.")
         await scp.channel.send(embed=embed)
+        time.sleep(10)
         
     if scp.content.startswith('!랜덤'):
         embed=discord.Embed(title= f"랜덤 scp", description=f"", color=0x23bb76)
