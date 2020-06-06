@@ -17,7 +17,11 @@ async def on_message(scp):
 
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: !최근 ')
+        await scp.channel.send('업데이트 내역: !최근')
+        
+    if scp.content.startswith('!버전'):
+
+        await scp.channel.send('버전 1.0.0, Apple 버전입니다!')  
         
     if scp.content.startswith('!최근'):
         
