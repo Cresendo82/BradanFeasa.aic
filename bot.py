@@ -28,7 +28,8 @@ async def on_message(scp):
         for feed in f['entries']:
             i = i+1
             embed=discord.Embed(title= f"최근 페이지", description=f"", color=0x23bb76)
-            embed.add_field(name="최근 페이지", value=feed.title, inline=False)
+            embed.add_field(name="최근 페이지 결과", value='[{0}](<{1}>)'.format(feed.title, feed.link), inline=False)
+            await scp.channel.send(embed=embed)
             if i == 1:
                 break
     
