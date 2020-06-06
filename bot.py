@@ -2,6 +2,7 @@ import discord
 import os
 import random
 import time
+import feedparser
 
 client = discord.Client()
 
@@ -18,6 +19,13 @@ async def on_message(scp):
 
         await scp.channel.send('업데이트 내역: 엄슴')
         
+    if scp.content.startswith('!최근'):
+        
+        f = feedparser.parse('http://ko.scp-wiki.net/feed/pages/pagename/most-recently-created/category/_default/order/created_at+desc/limit/1/t/%EC%B5%9C%EA%B7%BC+%EC%83%9D%EC%84%B1%EB%90%9C+%ED%8E%98%EC%9D%B4%EC%A7%80')
+ 
+        for feed in f['entries']:
+            await scp.channel.send(feed.title)
+    
     if scp.content.startswith('!샌박'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","-")
