@@ -23,7 +23,7 @@ async def on_message(scp):
         
     if scp.content.startswith('!버전'):
 
-        await scp.channel.send('버전 1.0.5, 부활했음!')  
+        await scp.channel.send('버전 2.0.0, 웹 크롤링 대규모 업데이트!')  
         
     if scp.content.startswith('!최근'):
         
@@ -74,7 +74,7 @@ async def on_message(scp):
         
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed.add_field(name="'" + info + "'" + " 유저 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
-        embed.add_field(name="'" + top_list[0].text + "'" + "가입된 위키닷 페이지", inline=False)
+        embed.add_field(name="'" + top_list[0].text + "'" + "가입된 위키닷 페이지", value='', inline=False)
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!태그'):
