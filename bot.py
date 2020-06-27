@@ -3,6 +3,8 @@ import os
 import random
 import time
 import feedparser
+import requests
+from bs4 import BeautifulSoup
 
 client = discord.Client()
 
@@ -59,7 +61,21 @@ async def on_message(scp):
         link = "http://www.wikidot.com/user:info/" + repl
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed.add_field(name="'" + info + "'" + " 유저 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
-        await scp.channel.send(embed=embed)          
+        await scp.channel.send(embed=embed)  
+
+    if scp.content.startswith('?유저'):
+        info = scp.content[4:len(scp.content)]
+        repl= info.replace(" ","_") 
+        link = "http://www.wikidot.com/user:info/" + repl
+        req = requests.get(link)
+        html = req.text
+        soup = BeautifulSoup(html, 'html.parser')
+        top_list = soup.select("#user-info-area > dl > dt:nth-child(1) > a")
+        
+        embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
+        embed.add_field(name="'" + info + "'" + " 유저 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
+        embed.add_field(name="'" + top_list[0].text + "'" + "가입된 위키닷 페이지", inline=False)
+        await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!태그'):
         info = scp.content[4:len(scp.content)]
