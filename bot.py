@@ -16,6 +16,7 @@ async def on_ready():
 async def on_member_join(member):
     for channel in member.guild.channels:
         if channel.name == '남태령':
+            time.sleep(1)
             embed=discord.Embed(title=f"환영합니다! " + member.name + "님!", description="SCP 세계관 공식 한국어 사이트 대화방에 오신걸 환영합니다!", color=0x00ff56)
             embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/715122773298511922/715410982901514271/sh.png")
             embed.add_field(name="일단,", value=f"member 권한이 없으신 분들께서 껐다 키면 로그가 안 보이는 불편을 겪으실 수 있습니다. <#563173658231701507>, <#556145244832530433>외의 다른 방에 못 들어가는 불편 역시 겪으실 수 있습니다. (<#563173658231701507>에 들어가시면 자세히 보실 수 있습니다).", inline=True)
