@@ -84,7 +84,7 @@ async def on_message(scp):
         req = requests.get(link)
         html = req.text
         soup = BeautifulSoup(html, 'html.parser')
-        th = soup.select("#user-info-area > dl > dt:nth-child(1) > a")
+        th = soup.select("#user-info-area > dl > dt > a")
         
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed.add_field(name="'" + info + "'" + " 유저 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
