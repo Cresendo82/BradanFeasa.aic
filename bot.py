@@ -88,7 +88,7 @@ async def on_message(scp):
         
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed.add_field(name="'" + info + "'" + " 유저 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)   
-        embed.add_field(name='유저 가입 현황', value=my.text, inline=False)
+        embed.add_field(name='유저 가입 현황', value=my[0].text, inline=False)
             
         await scp.channel.send(embed=embed)
         
