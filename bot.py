@@ -80,7 +80,7 @@ async def on_message(scp):
     if scp.content.startswith('?유저'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","_") 
-        link = "http://www.wikidot.com/user:info/" + repl
+        link = "http://www.wikidot.com/user:info/bangja" #+ repl
         req = requests.get(link)
         html = req.text
         soup = BeautifulSoup(html, 'html.parser')
