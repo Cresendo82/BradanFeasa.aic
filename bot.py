@@ -32,11 +32,11 @@ async def on_message(scp):
 
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: 환영 메세지 변경')
+        await scp.channel.send('업데이트 내역: 환영 메세지 자동화')
         
     if scp.content.startswith('!버전'):
 
-        await scp.channel.send('버전 2.0.0, 웹 크롤링 대규모 업데이트!')  
+        await scp.channel.send('버전 2.1.0, 환영 메세지 자동화!')  
         
     if scp.content.startswith('!최근'):
         
