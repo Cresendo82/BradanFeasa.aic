@@ -84,13 +84,13 @@ async def on_message(scp):
         req = requests.get(link)
         html = req.text
         soup = BeautifulSoup(html, 'html.parser')
-        my_titles = soup.select('#user-info-area > dl > dt > a')
-        txt = my_titles.text
+        my = soup.select("#user-info-area > dl > dt > a")
+        
         
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed.add_field(name="'" + info + "'" + " 유저 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)   
-        embed.add_field(name='유저 가입 현황', value=txt, inline=False)
+        embed.add_field(name='유저 가입 현황', value=my, inline=False)
             
         await scp.channel.send(embed=embed)
         
