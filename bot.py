@@ -41,7 +41,11 @@ async def on_message(scp):
         
     if scp.content.startswith('!경고'):
 
-        await scp.channel.send('경고입니다. 비회원은 경고시 즉시 밴임을 알아두시기 바랍니다.')        
+        await scp.channel.send('경고입니다. 비회원은 경고시 즉시 밴임을 알아두시기 바랍니다.')  
+        
+    if scp.content.startswith('!가입'):
+
+        await scp.channel.send('위키닷만 가입하신 것 같은데, 재단 위키에도 따로 가입을 해야합니다. 그러니까 네이버와 네이버 카페 같은 거죠. 신청서를 내시고 승인받으면 재단 위키 가입 완료입니다. 링크는 http://ko.scp-wiki.net/guide-for-newbies 여기서 해주세요!')         
         
     if scp.content.startswith('!최근'):
         
