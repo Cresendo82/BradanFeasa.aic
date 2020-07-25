@@ -47,6 +47,10 @@ async def on_message(scp):
 
         await scp.channel.send('위키닷만 가입하신 것 같은데, 재단 위키에도 따로 가입을 해야합니다. 그러니까 네이버와 네이버 카페 같은 거죠. 신청서를 내시고 승인받으면 재단 위키 가입 완료입니다. 링크는 http://ko.scp-wiki.net/guide-for-newbies 여기서 해주세요!')         
         
+    if scp.content.startswith('!os'):
+
+        await scp.channel.send(os.getcwd())    
+        
     if scp.content.startswith('!최근'):
         
         i = 0
