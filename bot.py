@@ -196,11 +196,16 @@ async def on_message(scp):
             await scp.channel.send(embed=embed)
             
         else:
-            embed=discord.Embed(title= f"**http://ko.scp-wiki.net/bimonthly-contests-2020#toc2**", description=f"", color=0x23bb76)                      
+            embed=discord.Embed(title= f"**http://ko.scp-wiki.net/bimonthly-contests-2020#toc4**", description=f"", color=0x23bb76)                      
             await scp.channel.send(embed=embed)
             
     if scp.content.startswith('!핑'):
-        await scp.channel.send('퐁')  
+        
+        await scp.channel.send('퐁')
+
+    if scp.content.startswith('?반응'):  
+        
+        await scp.add_reaction(🐟)
         
     if scp.content.startswith('!브라단'):
         
