@@ -109,7 +109,8 @@ async def on_message(scp):
         
         embed=discord.Embed(title=f"도와드릴까요?", description="명령어 목록", color=0x00ff56)
         embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그, !샌박, !랜덤, !라틴", inline=True)
-        embed.add_field(name="부가기능", value="!명령어, !환영, !업데이트, !핑, !브라단, !경연, !최근, !버전, !경고, !가입", inline=True)
+        embed.add_field(name="관리기능", value="!경고, !가입, !투표", inline=True)
+        embed.add_field(name="부가기능", value="!명령어, !환영, !업데이트, !핑, !브라단, !경연, !최근, !버전", inline=True)
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!환영'): 
@@ -161,7 +162,8 @@ async def on_message(scp):
             await scp.channel.send(embed=embed)
             
         elif info == '8':
-            embed=discord.Embed(title= f"**물고기 경연 결과가 나왔습니다.**", description=f"우승자는 [편집됨]님, [편집됨]님입니다! 상품은 [데이터 말소]입니다!", color=0x23bb76)
+            embed=discord.Embed(title= f"**물고기 경연 결과가 나왔습니다.**", description=f"우승자는 Bangja님, swaaaaaaaan님입니다! 상품은 베라 패밀리 아이스크림입니다!", color=0x23bb76)
+            embed.add_field(name="", value=f"||경연 마친 날로부터 1일 후 SCP-825-KO를 뛰어넘은 작품, SCP-157-KO는 제 마음속 영원한 1등입니다. ~~강수님은 싫어하시겠지만요.||", inline=True)
             await scp.channel.send(embed=embed)
             
         elif info == '9':
