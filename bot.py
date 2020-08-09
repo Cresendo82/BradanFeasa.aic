@@ -205,9 +205,7 @@ async def on_message(scp):
 
     if scp.content.startswith('?반응'):  
         
-        await scp.add_reaction(':voteup:')
-        await scp.add_reaction(':voteno:')
-        await scp.add_reaction(':votedown:')
+        await scp.add_reaction('a:voteup:723564695579000903')
         
     if scp.content.startswith('!브라단'):
         
