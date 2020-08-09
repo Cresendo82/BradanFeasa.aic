@@ -89,21 +89,6 @@ async def on_message(scp):
         embed.add_field(name="'" + info + "'" + " 유저 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed)  
 
-    if scp.content.startswith('?유저'):
-        info = scp.content[4:len(scp.content)]
-        repl= info.replace(" ","_") 
-        link = "http://www.wikidot.com/user:info/" + repl
-        req = requests.get(link)
-        html = req.text
-        soup = BeautifulSoup(html, 'html.parser')
-        my = soup.find_all("a",{"href":"http://ko.scp-wiki.net"})
-        
-        embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
-        embed.add_field(name="'" + info + "'" + " 유저 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)   
-        embed.add_field(name='유저 가입 현황', value='{0}'.format(my), inline=False)
-            
-        await scp.channel.send(embed=embed)
-        
     if scp.content.startswith('!태그'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","+") 
@@ -203,9 +188,11 @@ async def on_message(scp):
         
         await scp.channel.send('퐁')
 
-    if scp.content.startswith('?반응'):  
+    if scp.content.startswith('!투표'):  
         
         await scp.add_reaction('a:voteup:723564695579000903')
+        await scp.add_reaction('a:voteno:723564695755162065')
+        await scp.add_reaction('a:votedown:723564695486988319')
         
     if scp.content.startswith('!브라단'):
         
