@@ -116,7 +116,7 @@ async def on_message(scp):
     if scp.content.startswith('!환영'): 
         
         embed=discord.Embed(title=f"환영합니다!", description="SCP 세계관 공식 한국어 사이트 대화방에 오신걸 환영합니다!", color=0x00ff56)
-        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/715122773298511922/715410982901514271/sh.png")
+        embed.set_thumbnail(url="http://scpko.wdfiles.com/local--files/dinodon-s-hand/SH-KO.png")
         embed.add_field(name="일단,", value=f"member 권한이 없으신 분들께서 껐다 키면 로그가 안 보이는 불편을 겪으실 수 있습니다. <#563173658231701507>, <#556145244832530433>외의 다른 방에 못 들어가는 불편 역시 겪으실 수 있습니다. (<#563173658231701507>에 들어가시면 자세히 보실 수 있습니다).", inline=True)
         embed.add_field(name="그리고,", value="위키닷에 가입하신후, 재단 위키에 가입 신청을 해서 합격하면 member 권한을 얻으실 수 있습니다. http://ko.scp-wiki.net/system:join 이 링크로 들어가시면 됩니다. 가입 신청을 넣을 때에는 신입안내를 반드시 처음부터 끝까지 꼼꼼히 읽으셔야 합니다.", inline=True)
         embed.add_field(name="주의하셔야 할점이 있는데,", value="만약 가입 절차 내용을 누설 시 __***즉시 밴 처리 될 수 있습니다.***__ 또한 __***비회원은 경고시 즉시 밴***__임을 숙지해주시길 부탁드립니다. 더 많은 규칙을 위해 http://ko.scp-wiki.net/chat-guide 이걸 읽어주세요.", inline=True)
@@ -163,7 +163,6 @@ async def on_message(scp):
             
         elif info == '8':
             embed=discord.Embed(title= f"**물고기 경연 결과가 나왔습니다.**", description=f"우승자는 Bangja님, swaaaaaaaan님입니다! 상품은 베라 패밀리 아이스크림입니다!", color=0x23bb76)
-            embed.add_field(name="", value=f"||경연 마친 날로부터 1일 후 SCP-825-KO를 뛰어넘은 작품, SCP-157-KO는 제 마음속 영원한 1등입니다. ~~강수님은 싫어하시겠지만요.||", inline=True)
             await scp.channel.send(embed=embed)
             
         elif info == '9':
