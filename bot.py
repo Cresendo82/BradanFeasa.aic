@@ -71,7 +71,13 @@ async def on_message(scp):
         link = "http://sandbox.scp-wiki.kr/" + repl
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed.add_field(name="'" + info + "'" + "의 샌드박스 페이지", value='[{0}](<{1}>)'.format(info, link), inline=False)
-        await scp.channel.send(embed=embed)          
+        await scp.channel.send(embed=embed)
+        
+    if scp.content.startswith('!와'):
+        
+        await scp.channel.send('a:sans:727838798850818048')
+        
+        await scp.channel.delete(*, delay=1)
         
     if scp.content.startswith('!구글'):
         info = scp.content[4:len(scp.content)]
