@@ -76,7 +76,7 @@ async def on_message(scp):
     if scp.content.startswith('!구샌박'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","-")
-        link = "http://http://sandbox.scp-wiki.kr/" + repl
+        link = "http://sandbox.scp-wiki.kr/" + repl
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed.add_field(name="'" + info + "'" + "의 샌드박스 페이지", value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed)        
