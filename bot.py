@@ -73,6 +73,14 @@ async def on_message(scp):
         embed.add_field(name="'" + info + "'" + "의 샌드박스 페이지", value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed)
         
+    if scp.content.startswith('!구샌박'):
+        info = scp.content[4:len(scp.content)]
+        repl= info.replace(" ","-")
+        link = "http://http://sandbox.scp-wiki.kr/" + repl
+        embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
+        embed.add_field(name="'" + info + "'" + "의 샌드박스 페이지", value='[{0}](<{1}>)'.format(info, link), inline=False)
+        await scp.channel.send(embed=embed)        
+        
     if scp.content.startswith('!구글'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","+") 
@@ -108,7 +116,7 @@ async def on_message(scp):
     if scp.content.startswith('!명령어'):
         
         embed=discord.Embed(title=f"도와드릴까요?", description="명령어 목록", color=0x00ff56)
-        embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그, !샌박, !랜덤, !라틴", inline=True)
+        embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그, !구샌박, !샌박, !랜덤, !라틴", inline=True)
         embed.add_field(name="관리기능", value="!경고, !가입, !투표", inline=True)
         embed.add_field(name="부가기능", value="!명령어, !환영, !업데이트, !핑, !브라단, !경연, !최근, !버전", inline=True)
         await scp.channel.send(embed=embed)
