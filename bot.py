@@ -72,8 +72,8 @@ async def on_message(scp):
         o_link = "http://sandbox.scp-wiki.kr/" + repl
         
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
-        embed.add_field(name= "구 샌박: " info, value='[{0}](<{1}>)'.format(info, o_link), inline=False)
-        embed.add_field(name= "신 샌박: " info, value='[{0}](<{1}>)'.format(info, n_link), inline=False)
+        embed.add_field(name="구 샌박: " + info, value='[{0}](<{1}>)'.format(info, o_link), inline=False)
+        embed.add_field(name="신 샌박: " + info, value='[{0}](<{1}>)'.format(info, n_link), inline=False)
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!구글'):
