@@ -27,17 +27,28 @@ async def on_member_join(member):
             await channel.send(embed=embed)          
     
 @client.event
+async def on_ready():    
+    while True:
+        time.sleep(3600)
+        channel = get_channel(556145244832530433)
+        embed=discord.Embed(title=f"홍보글 현황", description="", color=0x00ff56)    
+        embed.add_field(name="경연", value=f"'[{0}](<{1}>)'.format('현재 진행중인 경연', 'http://ko.scp-wiki.net/bimonthly-contests-2020#toc4')", inline=True)
+        embed.add_field(name="이슈 트래커", value=f"'[{0}](<{1}>)'.format('이슈 현황', 'http://ko.scp-wiki.net/forum/t-13609347#post-4749579')", inline=True)
+        await channel.send(embed=embed)
+        
+    
+@client.event
 async def on_message(scp):
     if scp.author == client.user:
         return
 
     if scp.content.startswith('!업데이트'):
 
-        await scp.channel.send('업데이트 내역: 가입 안내 메세지 생성!')
+        await scp.channel.send('업데이트 내역: 자동 경연 및 스레드 홍보')
         
     if scp.content.startswith('!버전'):
 
-        await scp.channel.send('버전 2.2.7, 가입 안내 메세지 생성!')  
+        await scp.channel.send('버전 3.0, 가입 안내 메세지 생성!')  
         
     if scp.content.startswith('!경고'):
 
@@ -46,10 +57,6 @@ async def on_message(scp):
     if scp.content.startswith('!가입'):
 
         await scp.channel.send('위키닷만 가입하신 것 같은데, 재단 위키에도 따로 가입을 해야합니다. 그러니까 네이버와 네이버 카페 같은 거죠. 신청서를 내시고 승인받으면 재단 위키 가입 완료입니다. 링크는 http://ko.scp-wiki.net/guide-for-newbies 여기서 해주세요!')         
-        
-    if scp.content.startswith('!os'):
-
-        await scp.channel.send(os.getcwd())    
         
     if scp.content.startswith('!최근'):
         
@@ -111,8 +118,8 @@ async def on_message(scp):
     if scp.content.startswith('!명령어'):
         
         embed=discord.Embed(title=f"도와드릴까요?", description="명령어 목록", color=0x00ff56)
-        embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그, !구샌박, !샌박, !랜덤, !라틴", inline=True)
-        embed.add_field(name="관리기능", value="!경고, !가입, !투표", inline=True)
+        embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그, !샌박, !랜덤, !라틴", inline=True)
+        embed.add_field(name="관리기능", value="!경고, !가입, !투표, 자동 ", inline=True)
         embed.add_field(name="부가기능", value="!명령어, !환영, !업데이트, !핑, !브라단, !경연, !최근, !버전", inline=True)
         await scp.channel.send(embed=embed)
         
@@ -129,7 +136,7 @@ async def on_message(scp):
         
     if scp.content.startswith('!랜덤'):
         embed=discord.Embed(title= f"랜덤 scp", description=f"", color=0x23bb76)
-        embed.add_field(name="", value='[랜덤!](<{0}>)'.format(info, 'http://ko.scp-wiki.net/random:random-scp'), inline=False)
+        embed.add_field(name="", value='[{랜덤!}](<{0}>)'.format(info, 'http://ko.scp-wiki.net/random:random-scp'), inline=False)
         await scp.channel.send(embed=embed)
         
     if scp.content.startswith('!경연'):
