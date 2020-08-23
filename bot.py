@@ -27,15 +27,17 @@ async def on_member_join(member):
             await channel.send(embed=embed)          
     
 @client.event
-async def on_ready():    
-    while True:
-        channel = await client.get_channel(556145244832530433)
-        embed=discord.Embed(title=f"홍보글 현황", description="", color=0x00ff56)    
-        embed.add_field(name="경연", value=f"'[{0}](<{1}>)'.format('현재 진행중인 경연', 'http://ko.scp-wiki.net/bimonthly-contests-2020#toc4')", inline=True)
-        embed.add_field(name="이슈 트래커", value=f"'[{0}](<{1}>)'.format('이슈 현황', 'http://ko.scp-wiki.net/forum/t-13609347#post-4749579')", inline=True)
-        await channel.send(embed=embed)
+async def on_message(scp):
+    
+    for channel in scp.guild.channels:
+        if channel.name == '월대―잡담':    
+            while True:
+                embed=discord.Embed(title=f"홍보글 현황", description="", color=0x00ff56)    
+                embed.add_field(name="경연", value=f"'[{0}](<{1}>)'.format('현재 진행중인 경연', 'http://ko.scp-wiki.net/bimonthly-contests-2020#toc4')", inline=True)
+                embed.add_field(name="이슈 트래커", value=f"'[{0}](<{1}>)'.format('이슈 현황', 'http://ko.scp-wiki.net/forum/t-13609347#post-4749579')", inline=True)
+                await channel.send(embed=embed)
         
-        time.sleep(3600)
+                time.sleep(3600)
         
     
 @client.event
