@@ -11,7 +11,7 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
-    
+
 @client.event
 async def on_member_join(member):
     for channel in member.guild.channels:
@@ -25,21 +25,7 @@ async def on_member_join(member):
             embed.add_field(name="멤버 확인을 위해서,", value="관리자가 가입 신청을 수락하면 위키닷 닉네임과 디코 닉네임을 동일하게 바꾸어 주세요. 이 디스코드 서버에서만 바꾸시면 됩니다. 완료되면 @unterstaff로 스태프분들을 호출하세요. 스태프 분이 확인 뒤 멤버 권한을 드릴겁니다.", inline=True)
             embed.set_footer(text="수동이라서 느릴 수 있는 점, 양해 부탁드립니다. 다시 한번 SCP 세계관 공식 한국어 사이트 대화방에 오신 것을 환영합니다.")
             await channel.send(embed=embed)          
-    
-@client.event
-async def on_message(scp):
-    
-    for channel in scp.guild.channels:
-        if channel.name == '월대―잡담':    
-            while True:
-                embed=discord.Embed(title=f"홍보글 현황", description="", color=0x00ff56)    
-                embed.add_field(name="경연", value=f"'[{0}](<{1}>)'.format('현재 진행중인 경연', 'http://ko.scp-wiki.net/bimonthly-contests-2020#toc4')", inline=True)
-                embed.add_field(name="이슈 트래커", value=f"'[{0}](<{1}>)'.format('이슈 현황', 'http://ko.scp-wiki.net/forum/t-13609347#post-4749579')", inline=True)
-                await channel.send(embed=embed)
         
-                time.sleep(3600)
-        
-    
 @client.event
 async def on_message(scp):
     if scp.author == client.user:
@@ -136,12 +122,7 @@ async def on_message(scp):
         embed.add_field(name="멤버 확인을 위해서,", value="관리자가 가입 신청을 수락하면 위키닷 닉네임과 디코 닉네임을 동일하게 바꾸어 주세요. 이 디스코드 서버에서만 바꾸시면 됩니다. 완료되면 스태프 분들을 호출하세요. 스태프 분이 확인 뒤 멤버 권한을 드릴겁니다.", inline=True)
         embed.set_footer(text="수동이라서 느릴 수 있는 점, 양해 부탁드립니다. 다시 한번 SCP 세계관 공식 한국어 사이트 대화방에 오신 것을 환영합니다.")
         await scp.channel.send(embed=embed)
-        
-    if scp.content.startswith('!랜덤'):
-        embed=discord.Embed(title= f"랜덤 scp", description=f"", color=0x23bb76)
-        embed.add_field(name="", value='[{랜덤!}](<{0}>)'.format(info, 'http://ko.scp-wiki.net/random:random-scp'), inline=False)
-        await scp.channel.send(embed=embed)
-        
+
     if scp.content.startswith('!경연'):
         
         info = scp.content[4:len(scp.content)]
@@ -235,7 +216,7 @@ async def on_message(scp):
         link = "https://latina.bab2min.pe.kr/xe/?vid=xe&mid=latina&act=IS&where=&search_target=title_content&is_keyword=" + repl
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed.add_field(name="'" + info + "'" + "의 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
-        await scp.channel.send(embed=embed)            
+        await scp.channel.send(embed=embed)               
 
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)
