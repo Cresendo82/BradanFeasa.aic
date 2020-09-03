@@ -14,16 +14,17 @@ async def on_ready():
 
 @client.event
 async def on_member_join(member):
-    channel = client.get_channel('563278103951179786')
-        time.sleep(1)
-        embed=discord.Embed(title=f"환영합니다! " + member.name + "님!", description="SCP 세계관 공식 한국어 사이트 대화방에 오신걸 환영합니다!", color=0x00ff56)
-        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/715122773298511922/715410982901514271/sh.png")
-        embed.add_field(name="일단,", value=f"member 권한이 없으신 분들께서 껐다 키면 로그가 안 보이는 불편을 겪으실 수 있습니다. <#563173658231701507>, <#563278103951179786>외의 다른 방에 못 들어가는 불편 역시 겪으실 수 있습니다. (<#563173658231701507>에 들어가시면 자세히 보실 수 있습니다).", inline=True)
-        embed.add_field(name="그리고,", value="위키닷에 가입하신후, 재단 위키에 가입 신청을 해서 합격하면 member 권한을 얻으실 수 있습니다. http://ko.scp-wiki.net/system:join 이 링크로 들어가시면 됩니다. 가입 신청을 넣을 때에는 신입안내를 반드시 처음부터 끝까지 꼼꼼히 읽으셔야 합니다.", inline=True)
-        embed.add_field(name="주의하셔야 할점이 있는데,", value="만약 가입 절차 내용을 누설 시 __***즉시 밴 처리 될 수 있습니다.***__ 또한 __***비회원은 경고시 즉시 밴***__임을 숙지해주시길 부탁드립니다. 더 많은 규칙을 위해 http://ko.scp-wiki.net/chat-guide 이걸 읽어주세요.", inline=True)
-        embed.add_field(name="멤버 확인을 위해서,", value="관리자가 가입 신청을 수락하면 위키닷 닉네임과 디코 닉네임을 동일하게 바꾸어 주세요. 이 디스코드 서버에서만 바꾸시면 됩니다. 완료되면 @unterstaff로 스태프분들을 호출하세요. 스태프 분이 확인 뒤 멤버 권한을 드릴겁니다.", inline=True)
-        embed.set_footer(text="수동이라서 느릴 수 있는 점, 양해 부탁드립니다. 다시 한번 SCP 세계관 공식 한국어 사이트 대화방에 오신 것을 환영합니다.")
-        await channel.send(embed=embed)          
+    for channel in member.guild.channels:
+        if channel.name == '남태령―여우고개':
+            time.sleep(1)
+            embed=discord.Embed(title=f"환영합니다! " + member.name + "님!", description="SCP 세계관 공식 한국어 사이트 대화방에 오신걸 환영합니다!", color=0x00ff56)
+            embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/715122773298511922/715410982901514271/sh.png")
+            embed.add_field(name="일단,", value=f"member 권한이 없으신 분들께서 껐다 키면 로그가 안 보이는 불편을 겪으실 수 있습니다. <#563173658231701507>, <#563278103951179786>외의 다른 방에 못 들어가는 불편 역시 겪으실 수 있습니다. (<#563173658231701507>에 들어가시면 자세히 보실 수 있습니다).", inline=True)
+            embed.add_field(name="그리고,", value="위키닷에 가입하신후, 재단 위키에 가입 신청을 해서 합격하면 member 권한을 얻으실 수 있습니다. http://ko.scp-wiki.net/system:join 이 링크로 들어가시면 됩니다. 가입 신청을 넣을 때에는 신입안내를 반드시 처음부터 끝까지 꼼꼼히 읽으셔야 합니다.", inline=True)
+            embed.add_field(name="주의하셔야 할점이 있는데,", value="만약 가입 절차 내용을 누설 시 __***즉시 밴 처리 될 수 있습니다.***__ 또한 __***비회원은 경고시 즉시 밴***__임을 숙지해주시길 부탁드립니다. 더 많은 규칙을 위해 http://ko.scp-wiki.net/chat-guide 이걸 읽어주세요.", inline=True)
+            embed.add_field(name="멤버 확인을 위해서,", value="관리자가 가입 신청을 수락하면 위키닷 닉네임과 디코 닉네임을 동일하게 바꾸어 주세요. 이 디스코드 서버에서만 바꾸시면 됩니다. 완료되면 @unterstaff로 스태프분들을 호출하세요. 스태프 분이 확인 뒤 멤버 권한을 드릴겁니다.", inline=True)
+            embed.set_footer(text="수동이라서 느릴 수 있는 점, 양해 부탁드립니다. 다시 한번 SCP 세계관 공식 한국어 사이트 대화방에 오신 것을 환영합니다.")
+            await channel.send(embed=embed)         
         
 @client.event
 async def on_message(scp):
