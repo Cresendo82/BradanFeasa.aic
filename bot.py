@@ -5,10 +5,13 @@ import time
 import feedparser
 import requests
 from bs4 import BeautifulSoup
+
 client = discord.Client()
+
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
+
 @client.event
 async def on_member_join(member):
     for channel in member.guild.channels:
@@ -25,8 +28,10 @@ async def on_member_join(member):
         
 @client.event
 async def on_message(scp):
+
     if scp.author == client.user:
         return
+
     if scp.content.startswith('!업데이트'):
         await scp.channel.send('업데이트 내역: 자동 경연 및 스레드 홍보')
         
@@ -78,6 +83,7 @@ async def on_message(scp):
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed.add_field(name="'" + info + "'" + " 유저 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed)  
+
     if scp.content.startswith('!태그'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","+") 
@@ -94,8 +100,7 @@ async def on_message(scp):
         embed.add_field(name="'" + info + "'" + "  검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed)  
         
-    if scp.content.startswith('!명령어'):
-        
+    if scp.content.startswith('!명령어'): 
         embed=discord.Embed(title=f"도와드릴까요?", description="명령어 목록", color=0x00ff56)
         embed.add_field(name="검색기능", value="!구글, !위백, !scp, !태그, !샌박, !랜덤, !라틴", inline=True)
         embed.add_field(name="관리기능", value="!경고, !가입, !투표, 자동 ", inline=True)
@@ -112,6 +117,7 @@ async def on_message(scp):
         embed.add_field(name="멤버 확인을 위해서,", value="관리자가 가입 신청을 수락하면 위키닷 닉네임과 디코 닉네임을 동일하게 바꾸어 주세요. 이 디스코드 서버에서만 바꾸시면 됩니다. 완료되면 스태프 분들을 호출하세요. 스태프 분이 확인 뒤 멤버 권한을 드릴겁니다.", inline=True)
         embed.set_footer(text="수동이라서 느릴 수 있는 점, 양해 부탁드립니다. 다시 한번 SCP 세계관 공식 한국어 사이트 대화방에 오신 것을 환영합니다.")
         await scp.channel.send(embed=embed)
+
     if scp.content.startswith('!경연'):
         
         info = scp.content[4:len(scp.content)]
@@ -171,6 +177,7 @@ async def on_message(scp):
     if scp.content.startswith('!핑'):
         
         await scp.channel.send('퐁')
+
     if scp.content.startswith('!투표'):  
         
         await scp.add_reaction('a:voteup:723564695579000903')
@@ -189,6 +196,7 @@ async def on_message(scp):
             
         if i == 3:
             await scp.channel.send('SH-KO 에서 일하게 된게 영광인 연어, 브라단입니다.')
+
     if scp.content.startswith('!scp'):
         info = scp.content[5:len(scp.content)]
         repl= info.replace(" ","-")  
@@ -203,6 +211,7 @@ async def on_message(scp):
         link = "https://latina.bab2min.pe.kr/xe/?vid=xe&mid=latina&act=IS&where=&search_target=title_content&is_keyword=" + repl
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed.add_field(name="'" + info + "'" + "의 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
-        await scp.channel.send(embed=embed)               
+        await scp.channel.send(embed=embed)
+              
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)
