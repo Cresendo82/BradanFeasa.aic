@@ -33,15 +33,19 @@ async def on_message(scp):
         return
 
     if scp.content.startswith('!업데이트'):
+
         await scp.channel.send('업데이트 내역: 자동 경연 및 스레드 홍보')
         
     if scp.content.startswith('!버전'):
+
         await scp.channel.send('버전 3.0, 가입 안내 메세지 생성!')  
         
     if scp.content.startswith('!경고'):
+
         await scp.channel.send('경고입니다. 비회원은 경고시 즉시 밴임을 알아두시기 바랍니다.')  
         
     if scp.content.startswith('!가입'):
+
         await scp.channel.send('위키닷만 가입하신 것 같은데, 재단 위키에도 따로 가입을 해야합니다. 그러니까 네이버와 네이버 카페 같은 거죠. 신청서를 내시고 승인받으면 재단 위키 가입 완료입니다. 링크는 http://scpko.wikidot.com/guide-for-newbies 여기서 해주세요!')         
         
     if scp.content.startswith('!최근'):
@@ -49,7 +53,8 @@ async def on_message(scp):
         i = 0
         
         f = feedparser.parse('http://scpko.wikidot.com/feed/pages/pagename/most-recently-created/category/_default/order/created_at+desc/limit/1/t/%EC%B5%9C%EA%B7%BC+%EC%83%9D%EC%84%B1%EB%90%9C+%ED%8E%98%EC%9D%B4%EC%A7%80')
-         for feed in f['entries']:
+
+        for feed in f['entries']:
             i = i+1
             embed=discord.Embed(title= f"최근 페이지", description=f"", color=0x23bb76)
             embed.add_field(name="최근 페이지 결과", value='[{0}](<{1}>)'.format(feed.title, feed.link), inline=False)
