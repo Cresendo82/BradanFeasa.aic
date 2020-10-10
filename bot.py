@@ -5,13 +5,10 @@ import time
 import feedparser
 import requests
 from bs4 import BeautifulSoup
-
 client = discord.Client()
-
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
-
 @client.event
 async def on_member_join(member):
     for channel in member.guild.channels:
@@ -20,8 +17,8 @@ async def on_member_join(member):
             embed=discord.Embed(title=f"환영합니다! " + member.name + "님!", description="SCP 세계관 공식 한국어 사이트 대화방에 오신걸 환영합니다!", color=0x00ff56)
             embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/715122773298511922/715410982901514271/sh.png")
             embed.add_field(name="일단,", value=f"member 권한이 없으신 분들께서 껐다 키면 로그가 안 보이는 불편을 겪으실 수 있습니다. <#563173658231701507>, <#563278103951179786>외의 다른 방에 못 들어가는 불편 역시 겪으실 수 있습니다. (<#563173658231701507>에 들어가시면 자세히 보실 수 있습니다).", inline=True)
-            embed.add_field(name="그리고,", value="위키닷에 가입하신후, 재단 위키에 가입 신청을 해서 합격하면 member 권한을 얻으실 수 있습니다. http://ko.scp-wiki.net/system:join 이 링크로 들어가시면 됩니다. 가입 신청을 넣을 때에는 신입안내를 반드시 처음부터 끝까지 꼼꼼히 읽으셔야 합니다.", inline=True)
-            embed.add_field(name="주의하셔야 할점이 있는데,", value="만약 가입 절차 내용을 누설 시 __***즉시 밴 처리 될 수 있습니다.***__ 또한 __***비회원은 경고시 즉시 밴***__임을 숙지해주시길 부탁드립니다. 더 많은 규칙을 위해 http://ko.scp-wiki.net/chat-guide 이걸 읽어주세요.", inline=True)
+            embed.add_field(name="그리고,", value="위키닷에 가입하신후, 재단 위키에 가입 신청을 해서 합격하면 member 권한을 얻으실 수 있습니다. http://scpko.wikidot.com/system:join 이 링크로 들어가시면 됩니다. 가입 신청을 넣을 때에는 신입안내를 반드시 처음부터 끝까지 꼼꼼히 읽으셔야 합니다.", inline=True)
+            embed.add_field(name="주의하셔야 할점이 있는데,", value="만약 가입 절차 내용을 누설 시 __***즉시 밴 처리 될 수 있습니다.***__ 또한 __***비회원은 경고시 즉시 밴***__임을 숙지해주시길 부탁드립니다. 더 많은 규칙을 위해 http://scpko.wikidot.com/chat-guide 이걸 읽어주세요.", inline=True)
             embed.add_field(name="멤버 확인을 위해서,", value="관리자가 가입 신청을 수락하면 위키닷 닉네임과 디코 닉네임을 동일하게 바꾸어 주세요. 이 디스코드 서버에서만 바꾸시면 됩니다. 완료되면 @unterstaff로 스태프분들을 호출하세요. 스태프 분이 확인 뒤 멤버 권한을 드릴겁니다.", inline=True)
             embed.set_footer(text="수동이라서 느릴 수 있는 점, 양해 부탁드립니다. 다시 한번 SCP 세계관 공식 한국어 사이트 대화방에 오신 것을 환영합니다.")
             await channel.send(embed=embed)         
@@ -30,30 +27,24 @@ async def on_member_join(member):
 async def on_message(scp):
     if scp.author == client.user:
         return
-
     if scp.content.startswith('!업데이트'):
-
         await scp.channel.send('업데이트 내역: 자동 경연 및 스레드 홍보')
         
     if scp.content.startswith('!버전'):
-
         await scp.channel.send('버전 3.0, 가입 안내 메세지 생성!')  
         
     if scp.content.startswith('!경고'):
-
         await scp.channel.send('경고입니다. 비회원은 경고시 즉시 밴임을 알아두시기 바랍니다.')  
         
     if scp.content.startswith('!가입'):
-
-        await scp.channel.send('위키닷만 가입하신 것 같은데, 재단 위키에도 따로 가입을 해야합니다. 그러니까 네이버와 네이버 카페 같은 거죠. 신청서를 내시고 승인받으면 재단 위키 가입 완료입니다. 링크는 http://ko.scp-wiki.net/guide-for-newbies 여기서 해주세요!')         
+        await scp.channel.send('위키닷만 가입하신 것 같은데, 재단 위키에도 따로 가입을 해야합니다. 그러니까 네이버와 네이버 카페 같은 거죠. 신청서를 내시고 승인받으면 재단 위키 가입 완료입니다. 링크는 http://scpko.wikidot.com/guide-for-newbies 여기서 해주세요!')         
         
     if scp.content.startswith('!최근'):
         
         i = 0
         
-        f = feedparser.parse('http://ko.scp-wiki.net/feed/pages/pagename/most-recently-created/category/_default/order/created_at+desc/limit/1/t/%EC%B5%9C%EA%B7%BC+%EC%83%9D%EC%84%B1%EB%90%9C+%ED%8E%98%EC%9D%B4%EC%A7%80')
- 
-        for feed in f['entries']:
+        f = feedparser.parse('http://scpko.wikidot.com/feed/pages/pagename/most-recently-created/category/_default/order/created_at+desc/limit/1/t/%EC%B5%9C%EA%B7%BC+%EC%83%9D%EC%84%B1%EB%90%9C+%ED%8E%98%EC%9D%B4%EC%A7%80')
+         for feed in f['entries']:
             i = i+1
             embed=discord.Embed(title= f"최근 페이지", description=f"", color=0x23bb76)
             embed.add_field(name="최근 페이지 결과", value='[{0}](<{1}>)'.format(feed.title, feed.link), inline=False)
@@ -87,11 +78,10 @@ async def on_message(scp):
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed.add_field(name="'" + info + "'" + " 유저 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed)  
-
     if scp.content.startswith('!태그'):
         info = scp.content[4:len(scp.content)]
         repl= info.replace(" ","+") 
-        link = "http://ko.scp-wiki.net/system:page-tags/tag/" + repl
+        link = "http://scpko.wikidot.com/system:page-tags/tag/" + repl
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed.add_field(name="'" + info + "'" + " 태그 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed)  
@@ -117,12 +107,11 @@ async def on_message(scp):
         embed=discord.Embed(title=f"환영합니다!", description="SCP 세계관 공식 한국어 사이트 대화방에 오신걸 환영합니다!", color=0x00ff56)
         embed.set_thumbnail(url="http://scpko.wdfiles.com/local--files/dinodon-s-hand/SH-KO.png")
         embed.add_field(name="일단,", value=f"member 권한이 없으신 분들께서 껐다 키면 로그가 안 보이는 불편을 겪으실 수 있습니다. <#563173658231701507>, <#563278103951179786>외의 다른 방에 못 들어가는 불편 역시 겪으실 수 있습니다. (<#563173658231701507>에 들어가시면 자세히 보실 수 있습니다).", inline=True)
-        embed.add_field(name="그리고,", value="위키닷에 가입하신후, 재단 위키에 가입 신청을 해서 합격하면 member 권한을 얻으실 수 있습니다. http://ko.scp-wiki.net/system:join 이 링크로 들어가시면 됩니다. 가입 신청을 넣을 때에는 신입안내를 반드시 처음부터 끝까지 꼼꼼히 읽으셔야 합니다.", inline=True)
-        embed.add_field(name="주의하셔야 할점이 있는데,", value="만약 가입 절차 내용을 누설 시 __***즉시 밴 처리 될 수 있습니다.***__ 또한 __***비회원은 경고시 즉시 밴***__임을 숙지해주시길 부탁드립니다. 더 많은 규칙을 위해 http://ko.scp-wiki.net/chat-guide 이걸 읽어주세요.", inline=True)
+        embed.add_field(name="그리고,", value="위키닷에 가입하신후, 재단 위키에 가입 신청을 해서 합격하면 member 권한을 얻으실 수 있습니다. http://scpko.wikidot.com/system:join 이 링크로 들어가시면 됩니다. 가입 신청을 넣을 때에는 신입안내를 반드시 처음부터 끝까지 꼼꼼히 읽으셔야 합니다.", inline=True)
+        embed.add_field(name="주의하셔야 할점이 있는데,", value="만약 가입 절차 내용을 누설 시 __***즉시 밴 처리 될 수 있습니다.***__ 또한 __***비회원은 경고시 즉시 밴***__임을 숙지해주시길 부탁드립니다. 더 많은 규칙을 위해 http://scpko.wikidot.com/chat-guide 이걸 읽어주세요.", inline=True)
         embed.add_field(name="멤버 확인을 위해서,", value="관리자가 가입 신청을 수락하면 위키닷 닉네임과 디코 닉네임을 동일하게 바꾸어 주세요. 이 디스코드 서버에서만 바꾸시면 됩니다. 완료되면 스태프 분들을 호출하세요. 스태프 분이 확인 뒤 멤버 권한을 드릴겁니다.", inline=True)
         embed.set_footer(text="수동이라서 느릴 수 있는 점, 양해 부탁드립니다. 다시 한번 SCP 세계관 공식 한국어 사이트 대화방에 오신 것을 환영합니다.")
         await scp.channel.send(embed=embed)
-
     if scp.content.startswith('!경연'):
         
         info = scp.content[4:len(scp.content)]
@@ -176,13 +165,12 @@ async def on_message(scp):
             await scp.channel.send(embed=embed)
             
         else:
-            embed=discord.Embed(title= f"**http://ko.scp-wiki.net/bimonthly-contests-2020#toc4**", description=f"", color=0x23bb76)                      
+            embed=discord.Embed(title= f"**http://scpko.wikidot.com/bimonthly-contests-2020#toc4**", description=f"", color=0x23bb76)                      
             await scp.channel.send(embed=embed)
             
     if scp.content.startswith('!핑'):
         
         await scp.channel.send('퐁')
-
     if scp.content.startswith('!투표'):  
         
         await scp.add_reaction('a:voteup:723564695579000903')
@@ -201,13 +189,12 @@ async def on_message(scp):
             
         if i == 3:
             await scp.channel.send('SH-KO 에서 일하게 된게 영광인 연어, 브라단입니다.')
-
     if scp.content.startswith('!scp'):
         info = scp.content[5:len(scp.content)]
         repl= info.replace(" ","-")  
-        link = "http://ko.scp-wiki.net/scp-" + repl
+        link = "http://scpko.wikidot.com/scp-" + repl
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
-        embed.add_field(name="'" + info + "'" + "의 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
+        embed.add_field(name="'" + "SCP-" + repl + "'" + "의 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed) 
         
     if scp.content.startswith('!라틴'):
@@ -217,6 +204,5 @@ async def on_message(scp):
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed.add_field(name="'" + info + "'" + "의 검색 결과", value='[{0}](<{1}>)'.format(info, link), inline=False)
         await scp.channel.send(embed=embed)               
-
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)
