@@ -6,7 +6,7 @@ import feedparser
 import requests
 from bs4 import BeautifulSoup
 
-client = discord.Client(guild_subscriptions(true))
+client = discord.Client(guild_subscriptions(true),loop=None)
 
 @client.event
 async def on_ready():
