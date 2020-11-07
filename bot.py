@@ -111,6 +111,11 @@ async def on_message(scp):
         embed.add_field(name="관리기능", value="!경고, !가입, !투표, 자동 ", inline=True)
         embed.add_field(name="부가기능", value="!명령어, !환영, !업데이트, !핑, !브라단, !경연, !최근, !버전", inline=True)
         await scp.channel.send(embed=embed)
+
+    if scp.content.startswith('!랜덤')
+        embed=discord.Embed(title= f"랜덤 scp", description=f"", color=0x23bb76)
+        embed.add_field(name="'" + info + "'" + " 랜덤 scp", value='[{0}](<{1}>)'.format(info, link), inline=False)
+        await scp.channel.send(embed=embed)  
         
     if scp.content.startswith('!환영'): 
         
@@ -167,16 +172,8 @@ async def on_message(scp):
             embed=discord.Embed(title= f"**언어 경연 결과가 나왔습니다.**", description=f"우승자는 [편집됨]님, [편집됨]님입니다! 상품은 [데이터 말소]입니다!", color=0x23bb76)
             await scp.channel.send(embed=embed)
             
-        elif info == '11':
-            embed=discord.Embed(title= f"**성탄절 경연 투고 기간입니다.**", description=f"우리 모두 투고하고 상품받아요!", color=0x23bb76)
-            await scp.channel.send(embed=embed)
-            
-        elif info == '12':
-            embed=discord.Embed(title= f"**성탄절 경연 결과가 나왔습니다.**", description=f"우승자는 [편집됨]님, [편집됨]님입니다! 상품은 [데이터 말소]입니다!", color=0x23bb76) 
-            await scp.channel.send(embed=embed)
-            
         else:
-            embed=discord.Embed(title= f"**http://scpko.wikidot.com/bimonthly-contests-2020#toc4**", description=f"", color=0x23bb76)                      
+            embed=discord.Embed(title= f"**http://scpko.wikidot.com/bimonthly-contests-2020#toc5**", description=f"", color=0x23bb76)                      
             await scp.channel.send(embed=embed)
             
     if scp.content.startswith('!핑'):
