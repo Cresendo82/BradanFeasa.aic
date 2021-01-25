@@ -15,7 +15,7 @@ async def on_ready():
 @client.event
 async def on_member_join(member):
     for channel in member.guild.channels:
-        if channel.name == '남태령―여우고개':
+        if channel.name == '남태령—여우고개':
             time.sleep(1)
             embed=discord.Embed(title=f"환영합니다! " + member.name + "님!", description="SCP 세계관 공식 한국어 사이트 대화방에 오신걸 환영합니다!", color=0x00ff56)
             embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/715122773298511922/715410982901514271/sh.png")
@@ -124,7 +124,7 @@ async def on_message(scp):
         await scp.channel.send(embed=embed)
 
     if scp.content.startswith('!경연'):
-        embed=discord.Embed(title= f"**http://scpko.wikidot.com/scp888kocontesthub**", description=f"", color=0x23bb76)                      
+        embed=discord.Embed(title= f"**http://scpko.wikidot.com/samcheonri-contest#toc2**", description=f"", color=0x23bb76)                      
         await scp.channel.send(embed=embed)
             
     if scp.content.startswith('!핑'):
@@ -139,16 +139,13 @@ async def on_message(scp):
         
     if scp.content.startswith('!브라단'):
         
-        i = random.randint(1,3)
+        i = random.randint(1,2)
         
         if i == 1:
             await scp.channel.send('지혜의 연어, 브라단입니다.')
             
         if i == 2:
             await scp.channel.send('Made by Cresendo, 이용해주셔서 감사합니다!')
-            
-        if i == 3:
-            await scp.channel.send('SH-KO 에서 일하게 된게 영광인 연어, 브라단입니다.')
 
     if scp.content.startswith('!scp'):
         info = scp.content[5:len(scp.content)]
