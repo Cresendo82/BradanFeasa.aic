@@ -113,7 +113,7 @@ async def on_message(scp):
         await scp.channel.send(embed=embed)
 
     elif scp.content.startswith('!경연'):
-        embed=discord.Embed(title= "현재 진행중인 경연 목록", description="", color=0x23bb76)
+        embed=discord.Embed(title=f"현재 진행중인 경연 목록", description="", color=0x23bb76)
         embed.add_field(name="http://scpko.wikidot.com/samcheonri-contest#toc2", inline=False)
         embed.add_field(name="http://scpko.wikidot.com/2g3a-contest-hub", inline=False)
         await scp.channel.send(embed=embed)
