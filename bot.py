@@ -11,16 +11,15 @@ client = discord.Client(intents=discord.Intents.all())
 @client.event
 async def on_ready():
     print(f'We have logged in as {client.user}')
-    channel = '810873064186445834'
+    discord.utils.get(member.guild.channels, name="섭스크라이버-등록")
     Text= "test"
     Emoji = await channel.send(Text)
-    await channel.add_reaction(Emoji, emoji='a:understood:723564695461691453')
+    await Emoji.add_reaction('a:understood:723564695461691453')
 
 @client.event
 async def on_member_join(member):
     channel = discord.utils.get(member.guild.channels, name="남태령-여우고개")
     if channel:
-        await asyncio.sleep(1)
         embed=discord.Embed(title=f"환영합니다! {member.name}님!", description="SCP 세계관 공식 한국어 사이트 대화방에 오신걸 환영합니다!", color=0x00ff56)
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/715122773298511922/715410982901514271/sh.png")
         embed.add_field(name="일단,", value=f"member 권한이 없으신 분들께서 껐다 키면 로그가 안 보이는 불편을 겪으실 수 있습니다. <#563173658231701507>, <#563278103951179786>외의 다른 방에 못 들어가는 불편 역시 겪으실 수 있습니다. (<#563173658231701507>에 들어가시면 자세히 보실 수 있습니다).", inline=True)
