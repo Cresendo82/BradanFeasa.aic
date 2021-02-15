@@ -11,6 +11,10 @@ client = discord.Client(intents=discord.Intents.all())
 @client.event
 async def on_ready():
     print(f'We have logged in as {client.user}')
+    Channel = client.get_channel('810873064186445834')
+    Text= "test"
+    Emoji = await client.send_message(Channel, Text)
+    await client.add_reaction(Emoji, emoji='a:understood:723564695461691453')
 
 @client.event
 async def on_member_join(member):
@@ -148,6 +152,16 @@ async def on_message(scp):
         embed=discord.Embed(title= f"검색 결과", description=f"", color=0x23bb76)
         embed.add_field(name=f"'{info}'의 검색 결과", value=f'[{info}](<{link}>)', inline=False)
         await scp.channel.send(embed=embed)
+
+@client.event
+async def on_reaction_add(reaction, user):
+    Channel = client.get_channel('810873064186445834')
+    if reaction.message.channel.id != Channel
+    return
+    if reaction.emoji == "a:understood:723564695461691453":
+      Role = discord.utils.get(user.server.roles, name="테스트 역할")
+      await client.add_roles(user, Role)
+
               
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)
