@@ -117,7 +117,8 @@ async def on_message(scp):
         await scp.channel.send(embed=embed)
 
     elif scp.content.startswith('!경연'):
-        embed=discord.Embed(title= f"**http://scpko.wikidot.com/samcheonri-contest#toc2**", description=f"", color=0x23bb76)                      
+        embed=discord.Embed(title= f"**http://scpko.wikidot.com/samcheonri-contest#toc2**", description=f"", color=0x23bb76)
+        embed=discord.Embed(title= f"**http://scpko.wikidot.com/2g3a-contest-hub", description=f"", color=0x23bb76)                      
         await scp.channel.send(embed=embed)
             
     elif scp.content.startswith('!핑'):  
