@@ -114,8 +114,8 @@ async def on_message(scp):
 
     elif scp.content.startswith('!경연'):
         embed=discord.Embed(title=f"현재 진행중인 경연 목록", description="", color=0x23bb76)
-        embed.add_field(name="http://scpko.wikidot.com/samcheonri-contest#toc2", inline=False)
-        embed.add_field(name="http://scpko.wikidot.com/2g3a-contest-hub", inline=False)
+        embed.add_field(name="http://scpko.wikidot.com/samcheonri-contest#toc2")
+        embed.add_field(name="http://scpko.wikidot.com/2g3a-contest-hub")
         await scp.channel.send(embed=embed)
             
     elif scp.content.startswith('!핑'):  
@@ -157,8 +157,9 @@ async def on_reaction_add(reaction, user):
     if reaction.channel.id != Channel:
         return
     if reaction.emoji == '👍':
-      Role = discord.utils.get(user.Guild.role, name="테스트 역할")
-      await user.add_roles(Role)
+        async def _Sub(ctx, member: discord.Member=None):
+        member = member or ctx.message.author
+        await member.add_roles(get(ctx.guild.roles, name="subscriber"))
 
               
 access_token = os.environ["BOT_TOKEN"]
