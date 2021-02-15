@@ -12,9 +12,8 @@ client = discord.Client(intents=discord.Intents.all())
 async def on_ready():
     print(f'We have logged in as {client.user}')
     discord.utils.get(client.guild.channels, name="섭스크라이버-등록")
-    Text= "test"
-    Emoji = await channel.send(Text)
-    await Emoji.add_reaction('a:understood:723564695461691453')
+    messange = await channel.send(안뇨옹)
+    await message.add_reaction('a:understood:723564695461691453')
 
 @client.event
 async def on_member_join(member):
@@ -156,11 +155,11 @@ async def on_message(scp):
 @client.event
 async def on_reaction_add(reaction, user):
     channel = '810873064186445834'
-    #if reaction.message.channel.id != channel
-    #return
-    #if reaction.emoji == "a:understood:723564695461691453":
-      #Role = discord.utils.get(user.server.roles, name="테스트 역할")
-      #await channel.add_roles(user, Role)
+    if reaction.channel.id != channel:
+        return
+    if reaction.emoji == "a:understood:723564695461691453":
+      Role = discord.utils.get(user.guild.roles, name="테스트 역할")
+      await channel.add_roles(user, Role)
 
               
 access_token = os.environ["BOT_TOKEN"]
