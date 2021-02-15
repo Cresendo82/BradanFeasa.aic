@@ -157,7 +157,7 @@ async def on_message(scp):
 #async def on_reaction_add(reaction, user):
     #channel = '810873064186445834'
     #if reaction.message.channel.id != channel
-    return
+    #return
     #if reaction.emoji == "a:understood:723564695461691453":
       #Role = discord.utils.get(user.server.roles, name="테스트 역할")
       #await channel.add_roles(user, Role)
