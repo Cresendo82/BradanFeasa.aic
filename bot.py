@@ -17,7 +17,7 @@ async def on_ready():
 
 @client.event
 async def on_member_join(member):
-    channel = discord.utils.get(member.guild.channels, name="남태령-여우고개")
+    channel = discord.utils.get(member.guild.channels, name="남태령—여우고개")
     if channel:
         embed=discord.Embed(title=f"환영합니다! {member.name}님!", description="SCP 세계관 공식 한국어 사이트 대화방에 오신걸 환영합니다!", color=0x00ff56)
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/715122773298511922/715410982901514271/sh.png")
