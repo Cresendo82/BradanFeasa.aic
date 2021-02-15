@@ -155,7 +155,7 @@ async def on_reaction_add(reaction, user):
     Channel = discord.utils.get(client.guild.channels, name="섭스크라이버-등록")
     if reaction.channel.id != Channel:
         return
-    if reaction.emoji == 'a:understood:723564695461691453':
+    if reaction.emoji == '👍':
       Role = discord.utils.get(user.Guild.role, name="테스트 역할")
       await user.add_roles(Role)
 
