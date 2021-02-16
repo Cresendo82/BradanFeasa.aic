@@ -153,13 +153,13 @@ async def on_message(scp):
 
 @client.event
 async def on_reaction_add(reaction, user):
-    Channel = discord.utils.get(client.guild.channels, name="섭스크라이버-등록")
+    Channel = discord.utils.get(user.guild.channels, name="섭스크라이버-등록")
     if reaction.channel.id != Channel:
         return
     if reaction.emoji == '👍':
         async def _Sub(ctx, member: discord.Member=None):
-        member = member or ctx.message.author
-        await member.add_roles(get(ctx.guild.roles, name="subscriber"))
+            member = member or ctx.message.author
+            await member.add_roles(get(ctx.guild.roles, name="subscriber"))
 
               
 access_token = os.environ["BOT_TOKEN"]
