@@ -29,7 +29,7 @@ async def on_member_join(member):
 @client.event
 async def on_message(scp):
     if scp.author == client.user:
-        return
+        return 
     
     if scp.content.startswith('!업데이트'):
         await scp.channel.send('업데이트 내역: 자동 경연 및 스레드 홍보')
